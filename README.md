@@ -6,12 +6,12 @@
 
 1. **Criação de Projetos**: Permite a criação de múltiplos projetos.
 2. **Gerenciamento de Projetos**: Editar, excluir e adicionar equipes e membros a um projeto.
-3. **Criação de Tarefas**: Criação e atribuição de tarefas para membros e freelancers.
+3. **Criação de Tarefas**: Criação e atribuição de tarefas para membros e partes interessadas.
 4. **Acompanhamento de Tarefas**: Atualização do status das tarefas em tempo real.
 5. **Gerenciamento de Equipes**: Criar equipes e adicionar membros para fácil gerenciamento.
 6. **Monitoramento de Prazos**: Verificação dos prazos para cada tarefa.
 7. **Dashboard**: Visão geral do progresso dos projetos e tarefas.
-8. **Gerenciamento de Permissões**: Diferentes níveis de acesso (gestor, membro, freelancer).
+8. **Gerenciamento de Permissões**: Diferentes níveis de acesso (gestor, membro, consultores).
 
 ## Tecnologias Utilizadas 🛠️
 
@@ -42,27 +42,23 @@ planeja-facil/
 - **MongoDB** (Local ou em nuvem)
 
 ## Instalação ⚙️
-- Siga os passos abaixo para rodar o projeto localmente:
+- **Siga os passos abaixo para rodar o projeto localmente:**
 
 1. **Clone este repositório:**
 
 ````bash
-Copiar código
 git clone https://github.com/seu-usuario/planeja-facil.git
 ````
 2. **Entre no diretório do projeto:**
 ````bash
-Copiar código
 cd planeja-facil
 ````
 3. **Instale as dependências:**
 ````bash
-Copiar código
 npm install
 ````
 4. **Configure o banco de dados no arquivo .env. Exemplo de arquivo .env:**
 ````bash
-Copiar código
 MONGO_URI=mongodb://localhost:27017/planeja-facil
 PORT=5000
 JWT_SECRET=sua_chave_secreta
@@ -70,45 +66,43 @@ JWT_SECRET=sua_chave_secreta
 5. **Rode a aplicação em modo desenvolvimento:**
 
 ````bash
-Copiar código
 npm run dev
 ````
 6. **Acesse a API no seu navegador ou através do Postman/Insomnia:**
 
 ````arduino
-Copiar código
 http://localhost:5000
 ````
 ## Rotas da API 🛣️
 - **Projetos**
 
--- POST /api/projects: Cria um novo projeto.
--- GET /api/projects: Lista todos os projetos do usuário.
--- POST /api/projects/:id/team: Adiciona uma equipe ao projeto.
--- POST /api/projects/:id/member: Adiciona um membro ao projeto.
+- **POST /api/projects:** Cria um novo projeto.
+- **GET /api/projects:** Lista todos os projetos do usuário.
+- **POST /api/projects/:id/team:** Adiciona uma equipe ao projeto.
+- **POST /api/projects/:id/member:** Adiciona um membro ao projeto.
 
 - **Tarefas**
 
--- POST /api/tasks: Cria uma nova tarefa.
--- GET /api/tasks: Lista todas as tarefas do usuário.
--- PUT /api/tasks/:id/status: Atualiza o status de uma tarefa.
+- **POST /api/tasks:** Cria uma nova tarefa.
+- **GET /api/tasks:** Lista todas as tarefas do usuário.
+- **PUT /api/tasks/:id/status:** Atualiza o status de uma tarefa.
 
 - **Equipes**
 
--- POST /api/teams: Cria uma nova equipe.
--- GET /api/teams: Lista todas as equipes.
--- POST /api/teams/:id/member: Adiciona um membro à equipe.
+- **POST /api/teams:** Cria uma nova equipe.
+- **GET /api/teams:** Lista todas as equipes.
+- **POST /api/teams/:id/member:** Adiciona um membro à equipe.
 
 - **Autenticação**
 
--- POST /api/auth/register: Registra um novo usuário.
--- POST /api/auth/login: Faz login e retorna um token JWT.
+- **POST /api/auth/register:** Registra um novo usuário.
+- **POST /api/auth/login:** Faz login e retorna um token JWT.
 
 # Papéis e Permissões 🔐
-* Gestores de Projeto: Acesso completo para criar, gerenciar e acompanhar projetos e tarefas.
-* Membros da Equipe: Acesso limitado para visualizar e atualizar as tarefas atribuídas.
-* Freelancers/Consultores: Acesso restrito a tarefas específicas dentro dos projetos.
+* **Gestores de Projeto:** Acesso completo para criar, gerenciar e acompanhar projetos e tarefas.
+* **Membros da Equipe:** Acesso limitado para visualizar e atualizar as tarefas atribuídas.
+* **Consultores/Partes interessadas:** Acesso restrito a tarefas específicas dentro dos projetos.
 
 ## Melhorias Futuras 🚀
-* Integração com um frontend em React para interface gráfica.
+* Frontend.
 * Implementação de notificações para prazos de tarefas.
