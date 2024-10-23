@@ -1,0 +1,61 @@
+.telaPrincipal__filtro {
+    
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--corDeFundoSecundaria);
+    margin: -23px 0px 0px 0px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    align-items: center;
+        
+    
+}
+
+.telaPrincipal__filtro__vizualizacoes {
+   
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.telaPrincipal__filtro__filtro {
+
+    margin: 0px 40px 0px 0px;
+
+}
+
+.telaPrincipal__filtro__vizualizacoes__botao {
+
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+
+
+}
+
+.telaPrincipal__filtro__vizualizacoes__botao:hover {
+
+    background: var(--corDeFundoTerciaria);
+    
+
+}
+
+
+.telaPrincipal__filtro__vizualizacoes__botao__img {
+
+    width: 25px;
+
+}
+
+.botaoAtivo {
+
+    background: var(--corDeFundoTerciaria);
+
+}

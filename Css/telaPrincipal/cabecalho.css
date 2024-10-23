@@ -1,0 +1,147 @@
+.telaPrincipal__cabecalho {
+
+   display: flex;
+   flex-direction: column;
+
+
+}
+
+.telaPrincipal__cabecalho__continer__informacao {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 40px;
+  
+
+}
+
+.telaPrincipal__cabecalho__continer__informacao__apresentacao__titulo {
+
+   
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+
+}
+
+.telaPrincipal__cabecalho__continer__informacao__apresentacao__local {
+
+    display: flex;
+    align-items: end;
+    color: gray;
+
+}
+
+.telaPrincipal__cabecalho__continer__informacao__apresentacao__local__img {
+
+    height: 45px;
+    margin: 0px 5px 0px 0px;
+
+
+}
+
+.telaPrincipal__cabecalho__continer__informacao__apresentacao__icones {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+
+}
+
+.telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img {
+
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+   
+}
+
+.apresentacao__icones__img__corrigir {
+
+    margin: 5px 0px 0px 0px;
+
+}
+
+.telaPrincipal__cabecalho____paginas {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px 10px 40px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+
+
+}
+
+.ativoLinhaDecorativa3 {
+
+    width: 180px; 
+    background-color: green; 
+    height: 3px;
+    position: absolute;
+    top: 224px; 
+    left: 530px; 
+    z-index: 1;
+
+}
+
+.telaPrincipal__cabecalho____paginas__links {
+
+    display: flex;
+    gap: 35px;
+    font-size: 20px;
+
+}
+
+.telaPrincipal__cabecalho____paginas__continerColegas {
+
+    display: flex;
+    align-items: center;
+
+}
+
+.telaPrincipal__cabecalho____paginas__continerColegas__img {
+
+    width: 100px;
+
+}
+
+.telaPrincipal__cabecalho____paginas__continerColegas__maisColegas {
+
+    width: 45px; 
+    height: 45px; 
+    background-color: #1b1d1f; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 15px;
+    margin: 0px 0px 0px -5px;
+
+
+}
+
+.linhaDecorativa {
+
+    width: 1px; 
+    background-color: rgba(128, 128, 128, 0.5); 
+    height: 45px;
+    margin: 0px 10px;
+
+}
+
+.telaPrincipal__cabecalho____paginas__continerColegas__simbolo {
+
+    width: 40px;
+    height: 40px; 
+    background-color: #1b1d1f; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 30px;
+   
+
+}

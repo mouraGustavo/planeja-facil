@@ -1,0 +1,6 @@
+.telaPrincipal {
+
+    display: grid;
+    grid-template-rows: 250px 75px 1fr;
+
+}

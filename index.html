@@ -25,6 +25,11 @@
     <link rel="stylesheet" type="text/css" href="./Css/Conteudo/menuFerramentas.css">
     <link rel="stylesheet" type="text/css" href="./Css/Conteudo/menuProcura.css">
 
+    <link rel="stylesheet" type="text/css" href="./Css/telaPrincipal/telaPrincipal.css">
+    <link rel="stylesheet" type="text/css" href="./Css/telaPrincipal/cabecalho.css">
+    <link rel="stylesheet" type="text/css" href="./Css/telaPrincipal/Filtros.css">
+    <link rel="stylesheet" type="text/css" href="./Css/telaPrincipal/tarefas.css">
+
 </head>
 
 <!-- ----------------------------------------------CONTEUDO----------------------------------------------------------------- -->
@@ -317,7 +322,7 @@
 
                 <div class="menuProcura__lista__projetos__continer projetos__continer__margem">
 
-                    <button class="menuProcura__lista__projetos__botao__expandir__dois">
+                    <button class="menuProcura__lista__projetos__botao__expandir__dois botaoAtivo" >
 
                         <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
                         <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
@@ -351,9 +356,9 @@
 
                         </div>
 
-                        <a class="menuProcura__lista__projetos__projeto__link">
+                        <a class="menuProcura__lista__projetos__projeto__link linkAtivo">
 
-                            Sonegar imposto
+                            Sonegar imposto 
          
                         </a>
 
@@ -424,9 +429,146 @@
 
     </section>
 
-    <section>
+    <section class="telaPrincipal">
 
-        TESTE
+        <section class="telaPrincipal__cabecalho">
+
+            <div class="telaPrincipal__cabecalho__continer__informacao">
+
+                <div class="telaPrincipal__cabecalho__continer__informacao__apresentacao">
+
+                    <h2 class="telaPrincipal__cabecalho__continer__informacao__apresentacao__titulo"> 
+                        
+                        Sonegar imposto
+                
+                    </h2>
+
+                    <div class="telaPrincipal__cabecalho__continer__informacao__apresentacao__local">
+
+                        <img class="telaPrincipal__cabecalho__continer__informacao__apresentacao__local__img" src="./Imagens/menuProcura/Linha decorativa.png" alt="Icone seta">
+
+                        <h2> 
+                        
+                            PROJETOS / Projetos incompletos
+                    
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones">
+
+                    <img class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img apresentacao__icones__img__corrigir" src="./Imagens/Tela principal/icone busca.png" alt="Icone sbusca">
+
+                    <img class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img" src="./Imagens/Tela principal/icone estrela.png" alt="Icone estrela">
+
+                    <img class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img" src="./Imagens/Tela principal/icone menu.png" alt="Icone menu">
+
+                </div>
+
+            </div>
+
+            <div class="telaPrincipal__cabecalho____paginas">
+
+                <div class="ativoLinhaDecorativa3"></div>
+
+                <nav class="telaPrincipal__cabecalho____paginas__links">
+
+                    <a class="telaPrincipal__cabecalho____paginas__links__link">
+
+                        Tarefas
+
+                    </a>
+
+                    <a class="telaPrincipal__cabecalho____paginas__links__link linkAtivo">
+
+                        Linha do tempo
+
+                    </a>
+
+                    <a class="telaPrincipal__cabecalho____paginas__links__link">
+
+                        Arquivos
+
+                    </a>
+
+                </nav>
+
+                <div class="telaPrincipal__cabecalho____paginas__continerColegas">
+
+                    <img class="telaPrincipal__cabecalho____paginas__continerColegas__img" src="./Imagens/Tela principal/icone pessoas.png" alt="Icone pessoas">
+                
+                    <div class="telaPrincipal__cabecalho____paginas__continerColegas__maisColegas">
+
+                        +20
+
+                    </div>
+                    
+                    <div class="linhaDecorativa"></div>
+
+                    <div class="telaPrincipal__cabecalho____paginas__continerColegas__simbolo">
+
+                        +
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="telaPrincipal__filtro">
+
+            <div class="telaPrincipal__filtro__vizualizacoes">
+
+                <button class="telaPrincipal__filtro__vizualizacoes__botao botaoAtivo">
+
+                    <img class="telaPrincipal__filtro__vizualizacoes__botao__img" class="" src="./Imagens/Filtros/Kanban.png" alt="Icone Kanban">
+
+                    Kanban
+
+                </button>
+
+                <button  class="telaPrincipal__filtro__vizualizacoes__botao">
+
+                    <img class="telaPrincipal__filtro__vizualizacoes__botao__img" src="./Imagens/Filtros/Tabela.png" alt="Icone tabela">
+
+                    Tabela
+                    
+                </button>
+
+                <button  class="telaPrincipal__filtro__vizualizacoes__botao">
+
+                    <img class="telaPrincipal__filtro__vizualizacoes__botao__img" src="./Imagens/Filtros/Lista.png" alt="Icone lista">
+
+                    Ver lista
+                    
+                </button>
+
+            </div>
+
+            <div class="telaPrincipal__filtro__filtro">
+
+                <button  class="telaPrincipal__filtro__vizualizacoes__botao">
+
+                    <img class="telaPrincipal__filtro__vizualizacoes__botao__img" src="./Imagens/Filtros/Filtro.png" alt="Icone filtro ">
+
+                    Filtro
+                    
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class = "telaPrincipal__tarefas">
+
+            TESTE
+
+        </section>
+        
 
     </section>
 
