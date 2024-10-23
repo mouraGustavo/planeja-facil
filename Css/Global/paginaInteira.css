@@ -1,0 +1,11 @@
+.PaginaInteira {
+
+    display: grid;
+    grid-template-columns: 150px 450px 1fr;
+    gap: 10px;
+    overflow: hidden;
+    background: var(--corDeFundoPrincipal);
+    color: white;
+
+}
+
