@@ -1,5 +1,6 @@
 /*  importacoes de fontes */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* _______________________________________________________________________________________ */
 
@@ -9,12 +10,13 @@
 
     --corDeFundoPrincipal:  #000000;
     --corDeFundoSecundaria: #101214;
+    --corDeFundoTerciaria: #1b1d1f;
    
 
 
     /* fontes */
    
-   
+   --fontePrincipal: "Inter", sans-serif;
    
 }
 
