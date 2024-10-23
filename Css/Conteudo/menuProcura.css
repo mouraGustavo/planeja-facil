@@ -1,0 +1,128 @@
+.menuProcura {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: start;
+    padding: 20px 10px;
+    
+
+}
+
+.menuProcura__caixaDePesquisa {
+
+   
+    display: flex;
+  
+}
+
+.menuProcura__caixaDePesquisa__imagem {
+
+    width: 20px;
+    position: absolute;
+    top: 30px;
+    left: 170px;
+
+
+}
+
+.caixa__de__pesquisa__caixa {
+
+    width: 225px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid white;
+    background: transparent;
+    padding-left: 35px;
+    color: white;
+
+}
+
+.caixa__de__pesquisa__caixa:focus {
+
+    border: 2px solid green; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão ao focar */
+
+}
+
+.menuProcura__lista__favoritos {
+
+    margin: 20px 0px;
+
+}
+
+.menuProcura__lista__favoritos__botao__expandir {
+
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold
+
+
+}
+
+.menuProcura__lista__favoritos__botao__expandir__img {
+
+    width: 10px;
+    margin: 0px 5px 0px 0px;
+
+}
+
+
+
+
+.menuProcura__lista__favoritos__botao__expandir__projeto__link__iconeFavorito {
+
+
+  git ad
+
+}
+
+
+.menuProcura__lista__projetos {
+
+    margin: 40px 0px;
+
+}
+
+.menuProcura__lista__projetos__botao__expandir {
+
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold
+
+
+}
+
+.menuProcura__lista__projetos__botao__expandir__img {
+
+    width: 10px;
+    margin: 0px 5px 0px 0px;
+
+}
+
+
+
+.menuProcura__lista__arquivos {
+
+    margin: 40px 0px;
+
+}
+
+.menuProcura__lista__arquivos__botao__expandir {
+
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bold
+
+
+}
+
+.menuProcura__lista__arquivos__botao__expandir__img {
+
+    width: 10px;
+    margin: 0px 5px 0px 0px;
+
+}
