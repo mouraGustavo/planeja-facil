@@ -40,12 +40,18 @@
     gap: 10px;
     opacity: 0.2;
     
+}
+
+.textoCor2 {
+
+    color: white;
+    text-decoration: none;
 
 }
 
-.continerMenuHambuguer__opçoes__intens:hover {
+.textoCor2:hover {
 
-    opacity: 1;
+    color: blueviolet !important;
 
 }
 
@@ -64,6 +70,8 @@
     margin: 0px 3px 0px 2px;
 
 }
+
+
 
 .iconeusuario {
 
