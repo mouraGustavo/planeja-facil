@@ -48,6 +48,7 @@
     gap: 10px;
 
 
+
 }
 
 .telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img {
@@ -55,7 +56,37 @@
     width: 30px;
     height: 30px;
     object-fit: contain;
+    opacity: 0.2;
    
+}
+
+.telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img:hover {
+
+    opacity: 1;
+   
+}
+
+
+
+.telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__continer {
+    
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    background: transparent;
+    border: none;
+    justify-content: center;
+
+}
+
+.funcional {
+
+    opacity: 1;
+    
+    width: 25px;
+    height: 25px;
+    margin: 3px 0px 0px -5px;
+
 }
 
 .apresentacao__icones__img__corrigir {
@@ -77,21 +108,42 @@
 
 .ativoLinhaDecorativa3 {
 
-    width: 180px; 
+    width: 100px; 
     background-color: green; 
     height: 3px;
     position: absolute;
     top: 224px; 
-    left: 530px; 
+    left: 425px; 
     z-index: 1;
 
 }
+
 
 .telaPrincipal__cabecalho____paginas__links {
 
     display: flex;
     gap: 35px;
     font-size: 20px;
+
+}
+
+.telaPrincipal__cabecalho____paginas__links__link{
+
+    opacity: 0.2;
+
+}
+
+
+.telaPrincipal__cabecalho____paginas__links__link:hover {
+
+    color: blueviolet;
+    opacity: 1.0;
+
+}
+
+.linkAtivo:hover {
+
+    color: green;
 
 }
 
@@ -142,6 +194,12 @@
     justify-content: center; 
     align-items: center;
     font-size: 30px;
+    opacity: 0.2;
    
+}
+
+.telaPrincipal__cabecalho____paginas__continerColegas__simbolo:hover {
+
+    opacity: 1.0;
 
 }

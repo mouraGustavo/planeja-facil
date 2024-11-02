@@ -7,8 +7,7 @@
     border-bottom: 1px solid rgba(128, 128, 128, 0.5);
     align-items: center;
    
-        
-    
+   
 }
 
 .telaPrincipal__filtro__vizualizacoes {
@@ -37,7 +36,13 @@
     padding: 10px;
     border-radius: 5px;
     font-size: 20px;
+    opacity: 0.2;
 
+}
+
+.telaPrincipal__filtro__vizualizacoes__botao:hover {
+
+    opacity: 1;
 
 }
 

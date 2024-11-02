@@ -39,6 +39,13 @@
 
     width: 25px;
     margin: 0px 0px 0px 0px;
+    opacity: 0.2;
+
+}
+
+.telaPrincipal__tarefas__categoria__img:hover {
+
+    opacity: 1;
 
 }
 

@@ -18,6 +18,8 @@
     <title>Planeja fácil</title>
     <link rel="stylesheet" type="text/css" href=""> 
 
+    <link rel="icon" href="./Imagens/Menu lateral Botões/Logo Planeja facil branco.png" type="image/x-icon">
+
     <link rel="stylesheet" type="text/css" href="./Css/Global/reset.css"> 
     <link rel="stylesheet" type="text/css" href="./Css/Global/variables.css">
     <link rel="stylesheet" type="text/css" href="./Css/Global/paginaInteira.css">
@@ -27,6 +29,7 @@
 
     <link rel="stylesheet" type="text/css" href="./Css/telaPrincipal/telaPrincipal.css">
     <link rel="stylesheet" type="text/css" href="./Css/telaPrincipal/cabecalho.css">
+    <link rel="stylesheet" type="text/css" href="./Css/telaPrincipal/menuHambuguer.css">
     <link rel="stylesheet" type="text/css" href="./Css/telaPrincipal/Filtros.css">
     <link rel="stylesheet" type="text/css" href="./Css/telaPrincipal/tarefas.css">
 
@@ -38,13 +41,9 @@
 
     <nav class="menuLateral">
 
-        <ul class="menuLateral__icones">
+        <ul class="menuLateral__icones" id = "listaDeIcones">
 
-            <div class="ativoLinhaDecorativa"></div>
-
-            <div class="ativoLinhaDecorativa2"></div>
-
-            <li >
+            <li>
 
                 <div class="logo-container">
 
@@ -80,9 +79,9 @@
 
             <li>
 
-                <button class="menuLateral__icones__Botao">
+                <button class="menuLateral__icones__Botao iconeAtivo">
  
-                    <img class="menuLateral__icones__Botao__img" src="./Imagens/Menu lateral Botões/icone pasta verde.png" alt="Icone tarefas">
+                    <img class="menuLateral__icones__Botao__img"  src="./Imagens/Menu lateral Botões/icone pasta verde.png" alt="Icone tarefas">
  
                 </button>
   
@@ -144,11 +143,11 @@
 
         <ul class="menuProcura__lista">
 
-            <li class="menuProcura__lista__favoritos">
+            <li class="menuProcura__lista__favoritos" id = "listaFavoritos">
 
-                <button class="menuProcura__lista__favoritos__botao__expandir">
+                <button class="menuProcura__lista__favoritos__botao__expandir temporario" id = "botaoExpandir__Favorito">
 
-                    <img class="menuProcura__lista__favoritos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
+                    <img class="menuProcura__lista__favoritos__botao__expandir__img" id = "iconeSetaFavorito" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
 
                     FAVORITOS
 
@@ -204,22 +203,22 @@
 
             </li>
 
-            <li class="menuProcura__lista__projetos"> 
+            <li class="menuProcura__lista__projetos" id = "listaProjetos"> 
 
-                <button class="menuProcura__lista__projetos__botao__expandir">
+                <button class="menuProcura__lista__projetos__botao__expandir linkAtivo temporario" id = "botaoExpandir__Projetos">
 
-                    <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
+                    <img class="menuProcura__lista__projetos__botao__expandir__img" id = "iconeSeta__projetos" src="./Imagens/menuProcura/seta verde.png" alt="Icone seta">
 
                     PROJETOS
 
                 </button>
 
-                <div class="menuProcura__lista__projetos__continer">
+                <section class="menuProcura__lista__projetos__continer" id="listaTodosProjetos">
 
-                    <button class="menuProcura__lista__projetos__botao__expandir__dois">
+                    <button class="menuProcura__lista__projetos__botao__expandir__dois temporario" id = "botaoExpandir__TodosProjetos" >
 
-                        <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
-                        <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
+                        <img class="menuProcura__lista__projetos__botao__expandir__img"  id = "iconeSeta__TodosProjetos" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
+                        <img class="menuProcura__lista__projetos__botao__expandir__img"  id = "iconeSeta__TodosProjetos2" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
 
                         Todos os projetos 
     
@@ -289,14 +288,14 @@
 
                     </div>
 
-                </div>
+                </section>
 
-                <div class="menuProcura__lista__projetos__continer projetos__continer__margem">
+                <section class="menuProcura__lista__projetos__continer projetos__continer__margem " id = "listaProjetosFinalizados">
 
-                    <button class="menuProcura__lista__projetos__botao__expandir__dois">
+                    <button class="menuProcura__lista__projetos__botao__expandir__dois temporario" id = "botaoExpandir__ProjetosFinalizado">
 
-                        <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
-                        <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
+                        <img class="menuProcura__lista__projetos__botao__expandir__img" id = "iconeSeta__ProjetosFinalizado" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
+                        <img class="menuProcura__lista__projetos__botao__expandir__img" id = "iconeSeta__ProjetosFinalizado2" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
 
                         Projetos finalizados
     
@@ -318,15 +317,14 @@
 
                     </div>
 
-                </div>
+                </section>
 
-                <div class="menuProcura__lista__projetos__continer projetos__continer__margem">
+                <section class="menuProcura__lista__projetos__continer projetos__continer__margem" id = "listaProjetosIncompletos">
 
-                    <button class="menuProcura__lista__projetos__botao__expandir__dois botaoAtivo" >
+                    <button class="menuProcura__lista__projetos__botao__expandir__dois LinkAtivo temporario" id = "botaoExpandir__ProjetosIncompletos">
 
-                        <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
-                        <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
-
+                        <img class="menuProcura__lista__projetos__botao__expandir__img" id = "iconeSeta__ProjetosIncompletos" src="./Imagens/menuProcura/seta verde.png" alt="Icone seta">
+                        <img class="menuProcura__lista__projetos__botao__expandir__img " id = "iconeSeta__ProjetosIncompletos2" src="./Imagens/menuProcura/seta verde.png" alt="Icone seta">
 
                         Projetos incompletos
     
@@ -380,14 +378,14 @@
 
                     </div>
 
-                </div>
+                </section>
 
-                <div class="menuProcura__lista__projetos__continer projetos__continer__margem">
+                <section class="menuProcura__lista__projetos__continer projetos__continer__margem" id = "listaProjetosCompartilhados">
 
-                    <button class="menuProcura__lista__projetos__botao__expandir__dois">
+                    <button class="menuProcura__lista__projetos__botao__expandir__dois temporario" id="botaoExpandir__ProjetosCompartilhados">
 
-                        <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
-                        <img class="menuProcura__lista__projetos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
+                        <img class="menuProcura__lista__projetos__botao__expandir__img" id = "iconeSeta__ProjetosCompartilhados" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
+                        <img class="menuProcura__lista__projetos__botao__expandir__img" id = "iconeSeta__ProjetosCompartilhados2" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
 
                         Projetos compartilhados
     
@@ -409,19 +407,7 @@
 
                     </div>
 
-                </div>
-
-            </li>
-
-            <li class="menuProcura__lista__arquivos"> 
-
-                <button class="menuProcura__lista__arquivos__botao__expandir">
-
-                    <img class="menuProcura__lista__arquivos__botao__expandir__img" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
-
-                    ARQUIVOS
-
-                </button>
+                </section>
 
             </li>
 
@@ -457,13 +443,107 @@
 
                 </div>
 
-                <div class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones">
+                <div class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones" id = "iconesCabecalho">
 
                     <img class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img apresentacao__icones__img__corrigir" src="./Imagens/Tela principal/icone busca.png" alt="Icone sbusca">
 
                     <img class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img" src="./Imagens/Tela principal/icone estrela.png" alt="Icone estrela">
 
-                    <img class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img" src="./Imagens/Tela principal/icone menu.png" alt="Icone menu">
+                    <button class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__continer" id = "menuOpcoesDaPagina">
+
+                        <img class="telaPrincipal__cabecalho__continer__informacao__apresentacao__icones__img funcional"  src="./Imagens/Tela principal/Icone menu amarelo.png" alt="Icone menu">
+
+                    </button>
+
+                        <section class="continerMenuHambuguer esconder" id="menuOpcoesDaPagina">
+
+                            <ul class="continerMenuHambuguer__opçoes">
+
+                                <li class="continerMenuHambuguer__opçoes__intens funcional temporario" >
+
+                                    <img class="continerMenuHambuguer__opçoes__intens__img iconeusuario" src="./Imagens/MenuHamburguer/Perfil.jpg" alt="Icone usuario">
+
+                                    <a class="continerMenuHambuguer__opçoes__intens__texto" href="">
+
+                                        Fazer login
+
+                                    </a>
+
+                                </li>
+
+                                <li class="continerMenuHambuguer__opçoes__intens textoCor">
+
+                                    <label class="alternar">
+    
+                                        <input class="alternar-selecao" type="checkbox" id="alternar-cor">
+                                        <div class="alternar-escolha"></div>
+            
+                                    </label>
+
+                                    <a class="continerMenuHambuguer__opçoes__intens__texto textoCor">
+
+                                        Modo claro
+
+                                    </a>
+
+                                </li>
+
+                                <li class="continerMenuHambuguer__opçoes__intens textoCor">
+
+                                    <label class="alternar">
+    
+                                        <input class="alternar-selecao" type="checkbox" id="alternar-cor">
+                                        <div class="alternar-escolha"></div>
+            
+                                    </label>
+
+                                    <a class="continerMenuHambuguer__opçoes__intens__texto">
+
+                                        Modo alto contranste 
+
+                                    </a>
+
+                                </li>
+
+                                <li class="continerMenuHambuguer__opçoes__intens">
+
+                                    <img class="continerMenuHambuguer__opçoes__intens__img" src="./Imagens/MenuHamburguer/icone ajuda.png" alt="Icone usuario">
+
+                                    <a class="continerMenuHambuguer__opçoes__intens__texto">
+
+                                        Ajuda
+
+                                    </a>
+
+                                </li>
+
+                                <li class="continerMenuHambuguer__opçoes__intens">
+
+                                    <img class="continerMenuHambuguer__opçoes__intens__img" src="./Imagens/MenuHamburguer/icone erro.png" alt="Icone usuario">
+
+                                    <a class="continerMenuHambuguer__opçoes__intens__texto">
+
+                                        Relata erro
+
+                                    </a>
+
+                                </li>
+
+                                <li class="continerMenuHambuguer__opçoes__intens">
+
+                                    <img class="continerMenuHambuguer__opçoes__intens__img girar" src="./Imagens/MenuHamburguer/icone seta branca.png" alt="Icone usuario">
+
+                                    <a class="continerMenuHambuguer__opçoes__intens__texto">
+
+                                        Linguagem
+
+                                    </a>
+
+                                </li>
+
+                            </ul>
+                        
+                        </section>
 
                 </div>
 
@@ -473,15 +553,15 @@
 
                 <div class="ativoLinhaDecorativa3"></div>
 
-                <nav class="telaPrincipal__cabecalho____paginas__links">
+                <nav class="telaPrincipal__cabecalho____paginas__links" id = "paginasLinks">
 
-                    <a class="telaPrincipal__cabecalho____paginas__links__link">
+                    <a class="telaPrincipal__cabecalho____paginas__links__link linkAtivo">
 
                         Tarefas
 
                     </a>
 
-                    <a class="telaPrincipal__cabecalho____paginas__links__link linkAtivo">
+                    <a class="telaPrincipal__cabecalho____paginas__links__link">
 
                         Linha do tempo
 
@@ -495,7 +575,7 @@
 
                 </nav>
 
-                <div class="telaPrincipal__cabecalho____paginas__continerColegas">
+                <div class="telaPrincipal__cabecalho____paginas__continerColegas" id = "ColegasIcones">
 
                     <img class="telaPrincipal__cabecalho____paginas__continerColegas__img" src="./Imagens/Tela principal/icone pessoas.png" alt="Icone pessoas">
                 
@@ -519,7 +599,7 @@
 
         </section>
 
-        <section class="telaPrincipal__filtro">
+        <section class="telaPrincipal__filtro" id = "botoesFiltro">
 
             <div class="telaPrincipal__filtro__vizualizacoes">
 
@@ -567,13 +647,13 @@
 
             <section class="telaPrincipal__tarefas__categoria">
 
-                <div class="telaPrincipal__tarefas__categoria__topo">
+                <div class="telaPrincipal__tarefas__categoria__topo" id = "novaTarefaTopo">
 
                     <div class="telaPrincipal__tarefas__continer__topo">
                     
                         <h3 class="telaPrincipal__tarefas__categoria__titulo">
 
-                            🔴 <strong class="telaPrincipal__tarefas__categoria__titulo__texto"> Nova tarefa - 3 </strong>
+                            🔴 <strong class="telaPrincipal__tarefas__categoria__titulo__texto temporario"> Nova tarefa - 3 </strong>
 
                         </h3>
 
@@ -581,7 +661,7 @@
 
                     </div>
 
-                    <button class="telaPrincipal__tarefas__categoria__botaoAdicionar">
+                    <button class="telaPrincipal__tarefas__categoria__botaoAdicionar temporario">
 
                         +
 
@@ -611,7 +691,7 @@
 
                             </div>
 
-                            <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/icone menu.png" alt="Icone menu">
+                            <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/Icone menu amarelo.png" alt="Icone menu">
 
                         </div>
 
@@ -645,7 +725,7 @@
 
                         <div class="LinhaDecorativa2"></div>
 
-                        <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa">
+                        <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa temporario">
 
                             + Adicionar Subtarefa
 
@@ -656,12 +736,6 @@
                         <div class="telaPrincipal__tarefas__categoria__cards__continer__final">
 
                             <img class="telaPrincipal__tarefas__categoria__cards__continer__final__pessaosImg" src="./Imagens/cards/Mulheres icones.png" alt="Icone pessoas">
-
-                            <a>
-
-                                <img class="telaPrincipal__tarefas__categoria__cards__continer__final__arquivoImg" src="./Imagens/cards/Arquivo.png" alt="Icone arquivos">
-
-                            </a>
 
                         </div>
 
@@ -691,7 +765,7 @@
 
                             </div>
 
-                            <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/icone menu.png" alt="Icone menu">
+                            <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/Icone menu amarelo.png" alt="Icone menu">
 
                         </div>
 
@@ -733,7 +807,7 @@
 
                         <div class="LinhaDecorativa2"></div>
 
-                        <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa">
+                        <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa temporario">
 
                             + Adicionar Subtarefa
 
@@ -744,12 +818,6 @@
                         <div class="telaPrincipal__tarefas__categoria__cards__continer__final">
 
                             <img class="telaPrincipal__tarefas__categoria__cards__continer__final__pessaosImg" src="./Imagens/cards/Homens icones.png" alt="Icone pessoas">
-
-                            <a>
-
-                                <img class="telaPrincipal__tarefas__categoria__cards__continer__final__arquivoImg" src="./Imagens/cards/Arquivo.png" alt="Icone arquivos">
-
-                            </a>
 
                         </div>
 
@@ -779,7 +847,7 @@
 
                             </div>
 
-                            <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/icone menu.png" alt="Icone menu">
+                            <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/Icone menu amarelo.png" alt="Icone menu">
 
                         </div>
 
@@ -813,7 +881,7 @@
 
                         <div class="LinhaDecorativa2"></div>
 
-                        <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa">
+                        <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa temporario">
 
                             + Adicionar Subtarefa
 
@@ -824,12 +892,6 @@
                         <div class="telaPrincipal__tarefas__categoria__cards__continer__final">
 
                             <img class="telaPrincipal__tarefas__categoria__cards__continer__final__pessaosImg" src="./Imagens/cards/Mulheres icones.png" alt="Icone pessoas">
-
-                            <a>
-
-                                <img class="telaPrincipal__tarefas__categoria__cards__continer__final__arquivoImg" src="./Imagens/cards/Arquivo.png" alt="Icone arquivos">
-
-                            </a>
 
                         </div>
 
@@ -845,11 +907,11 @@
 
                 <div class="telaPrincipal__tarefas__categoria__topo">
 
-                    <div class="telaPrincipal__tarefas__continer__topo">
+                    <div class="telaPrincipal__tarefas__continer__topo" id = "emProgressoTopo">
                     
                         <h3 class="telaPrincipal__tarefas__categoria__titulo">
 
-                            ⚪ <strong class="telaPrincipal__tarefas__categoria__titulo__texto"> Em progresso - 1 </strong>
+                            ⚪ <strong class="telaPrincipal__tarefas__categoria__titulo__texto temporario"> Em progresso - 1 </strong>
 
                         </h3>
 
@@ -857,7 +919,7 @@
 
                     </div>
 
-                    <button class="telaPrincipal__tarefas__categoria__botaoAdicionar">
+                    <button class="telaPrincipal__tarefas__categoria__botaoAdicionar temporario">
 
                         +
 
@@ -887,7 +949,7 @@
 
                             </div>
 
-                            <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/icone menu.png" alt="Icone menu">
+                            <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/Icone menu amarelo.png" alt="Icone menu">
 
                         </div>
 
@@ -913,7 +975,7 @@
 
                         <div class="LinhaDecorativa2"></div>
 
-                        <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa">
+                        <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa temporario">
 
                             + Adicionar Subtarefa
 
@@ -924,12 +986,6 @@
                         <div class="telaPrincipal__tarefas__categoria__cards__continer__final">
 
                             <img class="telaPrincipal__tarefas__categoria__cards__continer__final__pessaosImg imgDiminuir" src="./Imagens/cards/Icone homem.png" alt="Icone pessoas">
-
-                            <a>
-
-                                <img class="telaPrincipal__tarefas__categoria__cards__continer__final__arquivoImg" src="./Imagens/cards/Arquivo.png" alt="Icone arquivos">
-
-                            </a>
 
                         </div>
 
@@ -947,11 +1003,11 @@
 
             <div class="telaPrincipal__tarefas__categoria__topo">
 
-                <div class="telaPrincipal__tarefas__continer__topo">
+                <div class="telaPrincipal__tarefas__continer__topo" id = "completoTopo">
                 
                     <h3 class="telaPrincipal__tarefas__categoria__titulo">
 
-                        🟢 <strong class="telaPrincipal__tarefas__categoria__titulo__texto"> Completo - 2 </strong>
+                        🟢 <strong class="telaPrincipal__tarefas__categoria__titulo__texto temporario"> Completo - 2 </strong>
 
                     </h3>
 
@@ -959,7 +1015,7 @@
 
                 </div>
 
-                <button class="telaPrincipal__tarefas__categoria__botaoAdicionar">
+                <button class="telaPrincipal__tarefas__categoria__botaoAdicionar temporario">
 
                     +
 
@@ -989,7 +1045,7 @@
 
                         </div>
 
-                        <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/icone menu.png" alt="Icone menu">
+                        <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/Icone menu amarelo.png" alt="Icone menu">
 
                     </div>
 
@@ -1023,7 +1079,7 @@
 
                     <div class="LinhaDecorativa2"></div>
 
-                    <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa">
+                    <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa temporario">
 
                         + Adicionar Subtarefa
 
@@ -1034,12 +1090,6 @@
                     <div class="telaPrincipal__tarefas__categoria__cards__continer__final">
 
                         <img class="telaPrincipal__tarefas__categoria__cards__continer__final__pessaosImg" src="./Imagens/cards/Homens icones.png" alt="Icone pessoas">
-
-                        <a>
-
-                            <img class="telaPrincipal__tarefas__categoria__cards__continer__final__arquivoImg" src="./Imagens/cards/Arquivo.png" alt="Icone arquivos">
-
-                        </a>
 
                     </div>
 
@@ -1061,11 +1111,9 @@
 
                             </p>
 
-                            
-
                         </div>
 
-                        <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/icone menu.png" alt="Icone menu">
+                        <img class="telaPrincipal__tarefas__categoria__cards__continer__topo__topicos__img" src="./Imagens/Tela principal/Icone menu amarelo.png" alt="Icone menu">
 
                     </div>
 
@@ -1099,7 +1147,7 @@
 
                     <div class="LinhaDecorativa2"></div>
 
-                    <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa">
+                    <button class="telaPrincipal__tarefas__categoria__cards__continer__AdicionarTarefa temporario">
 
                         + Adicionar Subtarefa
 
@@ -1110,12 +1158,6 @@
                     <div class="telaPrincipal__tarefas__categoria__cards__continer__final">
 
                         <img class="telaPrincipal__tarefas__categoria__cards__continer__final__pessaosImg" src="./Imagens/cards/Homens icones.png" alt="Icone pessoas">
-
-                        <a>
-
-                            <img class="telaPrincipal__tarefas__categoria__cards__continer__final__arquivoImg" src="./Imagens/cards/Arquivo.png" alt="Icone arquivos">
-
-                        </a>
 
                     </div>
 
@@ -1129,4 +1171,9 @@
 
 <!-- ----------------------------------------------SCRIPTS------------------------------------------------------------------- -->
 
-<script src=""></script>
+<script src="./JavaScript/imenuFerramentas.js"></script>
+<script src="./JavaScript/menuProcurar.js"></script>
+<script src="./JavaScript/cabecalho.js"></script>
+<script src="./JavaScript/filtro..js"></script>
+<script src="./JavaScript/tarefas.js"></script>
+<script src="./JavaScript/menuHambuguer.js"></script>

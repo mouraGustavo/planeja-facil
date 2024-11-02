@@ -63,13 +63,31 @@
 
 .menuLateral__icones__Botao {
 
-    width: 30px;
+    width: 100%;
     height: 30px;
     background-color: transparent;
     border: none;
-    margin: 0px 10px 10px 0px;
+    margin: 0px 32px 10px 0px;
     cursor: pointer;
-    
+    padding: 0px 41px ;
+    opacity: 0.2;
+
+}
+
+.iconeAtivo {
+
+    border-left: 2px solid green;
+    border-right: 2px solid green; 
+    opacity: 1.0;
+
+}
+
+.menuLateral__icones__Botao:hover {
+
+    border-left: 2px solid green;
+    border-right: 2px solid green; 
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); 
+    opacity: 1.0;
 }
 
 .menuLateral__icones__Botao__img  {
@@ -77,5 +95,5 @@
     width: 30px;
     height: 30px;
     object-fit: contain;
-   
+    
 }

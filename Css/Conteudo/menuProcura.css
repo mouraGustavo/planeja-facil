@@ -97,9 +97,7 @@
     border: none;
     color: white;
     font-weight: bold;
-
     cursor: pointer;
-
 
 }
 
@@ -166,8 +164,13 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    opacity: 0.2;
 
+}
 
+.menuProcura__lista__favoritos__botao__expandir__projeto__link:hover{
+
+    opacity: 1.0;
 
 }
 
@@ -195,6 +198,7 @@
     color: white;
     font-weight: bold;
     cursor: pointer;
+  
 
 
 }
@@ -225,6 +229,19 @@
 
 }
 
+.menuProcura__lista__projetos__projeto__link:hover {
+
+    opacity: 1.0;
+
+}
+
+.menuProcura__lista__projetos__projeto__link {
+
+    opacity: 0.2;
+
+}
+
+
 .menuProcura__lista__arquivos__botao__expandir__img {
 
     width: 10px;
@@ -232,9 +249,10 @@
 
 }
 
-.botaoAtivo {
+.LinkAtivo {
 
     color: green;
+   
 
 }
 

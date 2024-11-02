@@ -8,3 +8,20 @@
 
 }
 
+.esconder {
+
+    display: none !important;
+
+}
+
+.temporario {
+
+    color: yellow !important;
+
+}
+
+.funcional {
+
+    opacity: 1 !important;
+
+}

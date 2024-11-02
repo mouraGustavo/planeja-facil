@@ -1,0 +1,162 @@
+.continerMenuHambuguer {
+
+    position: absolute;
+    right: 50px;
+    top: 90px;
+    border-radius: 0.8rem;
+    border: 0.2rem solid green;
+    
+    background: rgba(19, 19, 19, 0.8); 
+    background: linear-gradient(rgba(19, 19, 19, 0.8), rgba(51, 54, 61, 0.8));
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+
+    
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    color: white;
+    width: auto;
+    font-size: 13px;
+    gap: 10px;
+    white-space: nowrap;
+    font-family: var(--fontePrincipal);
+    font-weight: bolder;
+    
+}
+
+.continerMenuHambuguer__opçoes {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.continerMenuHambuguer__opçoes__intens {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.2;
+    
+
+}
+
+.continerMenuHambuguer__opçoes__intens:hover {
+
+    opacity: 1;
+
+}
+
+.continerMenuHambuguer__opçoes__intens:hover {
+
+    color: blueviolet !important;
+    opacity: 1;
+
+}
+
+.continerMenuHambuguer__opçoes__intens__img {
+
+    width: 40px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin: 0px 3px 0px 2px;
+
+}
+
+.iconeusuario {
+
+    margin: 0px 10px 0px 2px;
+
+
+}
+
+.imgTamanho {
+
+    width: 20px;
+    margin: 0px 3px 0px 2px;
+
+}
+
+.girar {
+
+    transform: rotate(90deg);
+    width: 25px;
+    margin: 0px 10px 0px 8px;
+
+}
+
+.textoCor:hover {
+
+    color: green !important;
+
+}
+
+.alternar {
+
+    cursor: pointer;
+    display: inline-block;
+    pointer-events: all;
+
+}
+
+.alternar-escolha {
+
+    display: inline-block;
+    background: #ccc;
+    border-radius: 1.6rem;
+    width: 2.9rem;
+    height: 1.6rem;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+
+}
+
+.alternar-escolha:before, .alternar-escolha:after {
+
+    content: "";
+
+}
+
+.alternar-escolha:before {
+
+    display: block;
+    background: linear-gradient(to bottom, #fff 0%, #eee 100%);
+    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    transition: left 0.25s;
+
+}
+
+.alternar:hover .alternar-escolha:before {
+
+    background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+
+}
+
+.alternar-selecao:checked + .alternar-escolha {
+
+    background: green;
+
+}
+
+.alternar-selecao:checked + .alternar-escolha:before {
+
+    left: 1.5rem;
+
+}
+
+.alternar-selecao {
+
+    position: absolute;
+    visibility: hidden;
+
+}
+
+
