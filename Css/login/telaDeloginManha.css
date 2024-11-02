@@ -1,0 +1,235 @@
+.loginPaginaInteira {
+
+    background-image: url("/Imagens/login/TelaDelogin/fundo\ de\ manha.png");
+    background-size: cover; /* Para cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: var(--fontePrincipal);
+
+}
+
+.loginPaginaInteira__card {
+
+    background-image: url("/Imagens/login/TelaDelogin/fundo\ de\ manha\ dia.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto;
+    height: 1100px; 
+    width: 800px; 
+    border-radius: 15px; 
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+
+}
+
+.loginPaginaInteira__card__topo {
+
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 600px;
+    
+}
+
+.loginPaginaInteira__card__topo__inicio {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+
+}
+
+.logocontiner{
+
+    width: 70px; /* Ajuste o tamanho conforme necessário */
+    height: 70px; /* Ajuste o tamanho conforme necessário */
+    background-color: white; /* Cor de fundo do círculo */
+    border-radius: 50%; /* Faz o contêiner ficar redondo */
+    display: flex; /* Centraliza a imagem */
+  
+
+}
+
+.loginPaginaInteira__card__topo__inicio__img {
+
+    width: 70px;
+    border-radius: 50%;
+
+}
+
+.loginPaginaInteira__card__topo__inicio__volta {
+
+    text-decoration: none;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bolder;
+    border: none;
+    border: 2px solid transparent; 
+    transition: border-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.loginPaginaInteira__card__topo__inicio__volta:hover {
+
+    color:blueviolet;
+    border-color: blueviolet; 
+    
+
+}
+
+.loginPaginaInteira__card__embaixo {
+
+    background: white;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.loginPaginaInteira__card__topo__texto {
+
+    text-align: center;
+    margin: 50px 0px 80px 0px;
+    font-size: 20px;
+    font-family: var(--fonteTarceiaria);
+    
+}
+
+.loginPaginaInteira__card__topo__cadastro {
+
+    text-decoration: none;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bolder;
+    margin: 0px 340px;
+    border: 2px solid transparent; 
+    transition: border-color 0.3s ease, transform 0.3s ease; 
+    cursor: pointer;
+
+}
+
+.loginPaginaInteira__card__topo__cadastro:hover {
+
+    color: blueviolet;
+    border-color: blueviolet; 
+    
+
+}
+
+.loginPaginaInteira__card__topo__titulo {
+
+    font-family: var(--fonteSecundaria);
+    text-align: center;
+    margin: 100px 0px 50px 0px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: white;
+
+}
+
+.formualario {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.input-container {
+
+    margin: 50px 0px 0px 0px;
+    background-color: rgba(105, 63, 137, 0.882);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+
+}
+
+.input-icon {
+
+    width: 15px;
+
+}
+
+.container-escreverTexto {
+
+    background-color: rgba(105, 63, 137, 0.882);
+    border: none;
+    color: white;
+    background: transparent;
+    outline: none;
+    margin: 0px 0px px 10px;
+    font-size: 20px;
+
+}
+
+.container-escreverTexto::placeholder {
+
+    color: white; 
+    opacity: 1; 
+    text-align: center;
+    border: none;
+
+}
+
+
+.botaoEnviar {
+
+    margin: 50px 0px 0px 0px;
+    background-color: rgba(105, 63, 137, 0.882);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 200px;
+    font-weight: bolder;
+    cursor: pointer;
+    border: 2px solid transparent; 
+    transition: border-color 0.3s ease, transform 0.3s ease; 
+
+}
+
+.botaoEnviar:hover {
+
+    background: transparent;
+    color: rgba(105, 63, 137, 0.882);
+    border: 2px solid rgba(105, 63, 137, 0.882);
+    
+
+}
+
+
+.loginPaginaInteira__card__embaixo__esqueceuSenha {
+
+    text-align: center;
+    margin: 50px 0px 80px 0px;
+    font-size: 20px;
+    font-family: var(--fonteTarceiaria);
+    cursor: pointer;
+   
+
+}
+
+.loginPaginaInteira__card__embaixo__esqueceuSenha:hover {
+
+    color:blueviolet;
+    border-color: blueviolet; 
+    
+
+}

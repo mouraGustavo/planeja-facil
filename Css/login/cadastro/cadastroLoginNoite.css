@@ -1,0 +1,343 @@
+.loginPaginaInteira {
+
+    background-image: url("/Imagens/login/TelaDelogin/fundo\ a\ noite.png");
+    background-size: cover; /* Para cobrir toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: var(--fontePrincipal);
+
+}
+
+.loginPaginaInteira__card {
+
+    background-image: url("/Imagens/login/TelaDelogin/fundo\ a\ noite\ top.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto;
+    height: 2000px; 
+    width: 800px; 
+    border-radius: 15px; 
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+
+}
+
+.loginPaginaInteira__card__topo {
+
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 1000px;
+    
+}
+
+.loginPaginaInteira__card__topo__inicio {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+
+}
+
+.logocontiner{
+
+    width: 70px; /* Ajuste o tamanho conforme necessário */
+    height: 70px; /* Ajuste o tamanho conforme necessário */
+    background-color: white; /* Cor de fundo do círculo */
+    border-radius: 50%; /* Faz o contêiner ficar redondo */
+    display: flex; /* Centraliza a imagem */
+  
+
+}
+
+.loginPaginaInteira__card__topo__inicio__img {
+
+    width: 70px;
+    border-radius: 50%;
+
+}
+
+.loginPaginaInteira__card__topo__inicio__volta {
+
+    text-decoration: none;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bolder;
+    border: none;
+    border: 2px solid transparent; 
+    transition: border-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.loginPaginaInteira__card__topo__inicio__volta:hover {
+
+    color:blueviolet;
+    border-color: blueviolet; 
+
+}
+
+.loginPaginaInteira__card__embaixo {
+
+    background: white;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.loginPaginaInteira__card__topo__texto {
+
+    text-align: center;
+    margin: 200px 0px 80px 0px;
+    font-size: 20px;
+    font-family: var(--fonteTarceiaria);
+    color: white;
+    
+}
+
+.loginPaginaInteira__card__topo__cadastro {
+
+    text-decoration: none;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: black;
+    font-weight: bolder;
+    margin: 0px 340px;
+    border: 2px solid transparent; 
+    transition: border-color 0.3s ease, transform 0.3s ease; 
+    cursor: pointer;
+
+}
+
+.loginPaginaInteira__card__topo__cadastro:hover {
+
+    color: blueviolet;
+    border-color: blueviolet; 
+    
+
+}
+
+.loginPaginaInteira__card__topo__titulo {
+
+    font-family: var(--fonteSecundaria);
+    text-align: center;
+    margin: 100px 0px 50px 0px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: white;
+
+}
+
+.formulario {
+
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.input__titulo {
+
+    font-family: var(--fonteSecundaria);
+    font-weight: bolder;
+
+}
+
+.input-container {
+
+    margin: 10px 0px 10px 0px;
+
+}
+
+.container-escreverTexto {
+
+    width: 600px;
+    height: 10px;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.inputFotoPerfil {
+
+    width: 600px;
+    height: 10px;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.container-imagem {
+
+    height: 350px;
+    width: 400px;
+    padding: 24px 16px;
+    background-color: #888888;
+    border-radius: 8px;
+    margin: 20px 0px 0px 0px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+
+.main-imagem {
+
+    margin: 50px 0px -30px 0px;
+    width: 200px;
+
+}
+
+
+.container-upload-imagem button {
+
+    margin: 16px 0 8px 0;
+    background-color: transparent;
+    border: 2px solid #3f378a;
+    border-radius: 8px;
+    color: var(--secondary-color);
+    width: 434px;
+    text-align: center;
+    padding: 12px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 18px;
+    position: relative;
+    color: #3f378a;
+    cursor: pointer;
+}
+
+.container-upload-imagem button:hover {
+   
+    background-color: #3f378a;
+    border: none;
+    color: white;
+
+
+}
+
+.container-upload-imagem button::after {
+
+    content: "";
+    background-image: url("./img/upload.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 8px
+
+}
+
+.container-imagem-nome {
+
+    display: flex;
+    gap: 8px;
+    color: var(--secondary-color);
+    font-size: 15px;
+}
+
+.botaoDescartar {
+
+    margin: 16px 0 8px 0;
+    border-radius: 8px;
+    color: var(--secondary-color);
+    width: 434px;
+    text-align: center;
+    padding: 12px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 18px;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #3f378a;
+    border: none;
+    color: white;
+
+}
+
+.botaoDescartar:hover {
+
+    border: 2px solid black; 
+
+}
+
+.lixeira {
+
+    width: 12px;
+
+}
+
+.botaoEnviar {
+
+    margin: 16px 0 8px 0;
+    border-radius: 8px;
+    color: var(--secondary-color);
+    width: 434px;
+    text-align: center;
+    padding: 12px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 18px;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #3f378a;
+    border: none;
+    color: white;
+
+
+}
+
+.botaoEnviar:hover {
+
+    border: 2px solid black; 
+
+}
+
+.linhaDecorativa {
+
+    width: 2px;
+    height: 620px;
+    position: absolute;
+    right: 950px;
+    top: 1410px;
+    background: #3f378a;
+
+}
+
+.linhaDecorativa2 {
+
+    width: 2px;
+    height: 410px;
+    position: absolute;
+    right: 900px;
+    top: 1410px;
+    background: #3f378a;
+    
+}
+
+.linhaDecorativa3 {
+
+    width: 2px;
+    height: 280px;
+    position: absolute;
+    right: 850px;
+    top: 1410px;
+    background: #3f378a;
+
+}

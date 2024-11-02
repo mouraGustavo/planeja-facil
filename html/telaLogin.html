@@ -24,9 +24,6 @@
     <link rel="stylesheet" type="text/css" href="../Css/Global/variables.css">
     <link rel="stylesheet" type="text/css" href="../Css/Global/paginaInteira.css">
 
-    <link rel="stylesheet" type="text/css" href="../Css/login/telaDeLogin.css">
-
-
 </head>
 
 <!-- ----------------------------------------------CONTEUDO----------------------------------------------------------------- -->
@@ -59,7 +56,7 @@
 
             </p>
 
-            <a class="loginPaginaInteira__card__topo__cadastro">
+            <a class="loginPaginaInteira__card__topo__cadastro"  href="/html/cadastro.html">
 
                 Cadastrar 
 
@@ -99,14 +96,48 @@
 
             </form>
 
-            <a class="">
+            <a class="loginPaginaInteira__card__embaixo__esqueceuSenha" href="/html/recuperarSenha.html">
 
-                você esqueceu a senha ?
+                Você esqueceu a senha ?
 
             </a>
 
         </section>
 
     </section>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const hour = new Date().getHours();
+            let cssFile;
+    
+            if (hour >= 6 && hour < 12) {
+
+                cssFile = "telaDeLoginManha.css"; 
+
+            } else if (hour >= 12 && hour < 18) {
+
+                cssFile = "telaDeLoginTarde.css"; 
+
+            } else if (hour >= 18 && hour < 24) {
+
+                cssFile = "telaDeLoginNoite.css"; 
+
+            } else {
+                
+                cssFile = "telaDeLoginMadrugada.css"; 
+
+            }
+    
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = `../Css/login/${cssFile}`; 
+            document.head.appendChild(link);
+            
+        });
+
+    </script>
 
 </body>

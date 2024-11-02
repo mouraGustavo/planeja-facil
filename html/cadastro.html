@@ -1,0 +1,201 @@
+<!-- 
+    
+    Criador: Thiago, Juliana, Gustavo, Eric, Junior
+    Data inicial: 02/09/2024
+    Data final: indefindo  
+    
+-->
+
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<!-- -----------------------------------------------META-DADOS//LINKS-------------------------------------------------------------- -->
+
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeja fácil</title>
+    <link rel="stylesheet" type="text/css" href=""> 
+
+    <link rel="icon" href="../Imagens/Menu lateral Botões/Logo Planeja facil branco.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../Css/Global/reset.css"> 
+    <link rel="stylesheet" type="text/css" href="../Css/Global/variables.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Global/paginaInteira.css">
+
+    
+
+</head>
+
+<!-- ----------------------------------------------CONTEUDO----------------------------------------------------------------- -->
+
+<body class="loginPaginaInteira">
+
+    <section class="loginPaginaInteira__card">
+
+        <section class="loginPaginaInteira__card__topo">
+
+            <div class="loginPaginaInteira__card__topo__inicio">
+
+                <div class="logocontiner">
+        
+                    <img class="loginPaginaInteira__card__topo__inicio__img" src="../Imagens/Menu lateral Botões/logo planeja facil preto2.png" alt="Logo do Planeja Fácil">
+
+                </div>
+
+                <a class="loginPaginaInteira__card__topo__inicio__volta" href="/index.html">
+
+                    Volta tela inicial
+
+                </a>
+
+            </div>
+
+            <p class="loginPaginaInteira__card__topo__texto">
+
+                Espera,  Você ja tem uma conta ?
+
+            </p>
+
+            <a class="loginPaginaInteira__card__topo__cadastro"  href="/html/telaLogin.html">
+
+                Fazer login
+
+            </a>
+
+            <h1 class="loginPaginaInteira__card__topo__titulo">
+
+                CADASTRO
+
+            </h1>
+
+        </section>
+
+        <form class="formulario" action="/caminho-para-processamento" method="POST" enctype="multipart/form-data">
+
+            <p class="input__titulo">
+
+                Seu nome 
+
+            </p>
+           
+            <div class="input-container">
+
+                <input type="text" class="container-escreverTexto" id="nome" name="nome" placeholder="Exemplo: América do Sul da silva cunha" required>
+
+            </div>
+    
+            <p class="input__titulo">
+
+                Seu email
+
+            </p>
+           
+            <div class="input-container">
+                
+                <input type="email" class="container-escreverTexto" id="email" name="email" placeholder="Exemplo: ronaldinhoDoPneu14@gmail.com" required>
+                
+            </div>
+
+            <p class="input__titulo">
+
+                Sua senha
+
+            </p>
+    
+            <div class="input-container">
+
+                <input type="password" class="container-escreverTexto" id="senha" name="senha" placeholder="NãoTenhoSaudadesDaEx10@" required>
+
+            </div>
+
+            <p class="input__titulo">
+
+                Sua foto de Perfil
+
+            </p>
+    
+            <!-- Campo de Foto para Perfil -->
+            <div class="container-upload-imagem">
+
+                <div class="container-imagem">
+
+                    <img  src="../Imagens/login/cadastro/Usuario exemplo.svg" alt="Sua imagem enviada vai aparecer aqui" class="main-imagem">
+                    Sua imagem enviada vai aparecer aqui
+
+                </div>
+
+                <button id="upload-btn">
+                    
+                    Enviar imagem
+                    <img src="../Imagens/login/cadastro/arrow_forward2.svg">
+
+                </button>
+
+                <input type="file" id="image-upload" accept="image/" style="display: none" />
+                
+
+                <div class="container-imagem-nome">
+
+                    <p>exemploDoNomeDaImagem.png</p>
+                    <img src="../Imagens/login/cadastro/close-black.svg">
+
+                </div>
+
+            </div>
+
+            <!-- Botão de Cadastro -->
+            <button class="botaoDescartar" type="reset">
+
+                <img class="lixeira" src="../Imagens/login/cadastro/lixeira.svg">
+                Descartar
+
+            </button>
+    
+            <!-- Botão de Cadastro -->
+            <button class="botaoEnviar" type="submit">
+
+                Cadastrar
+
+            </button>
+    
+        </form>
+
+    </section>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const hour = new Date().getHours();
+            let cssFile;
+    
+            if (hour >= 6 && hour < 12) {
+
+                cssFile = "cadastroLoginManha.css"; 
+
+            } else if (hour >= 12 && hour < 18) {
+
+                cssFile = "cadastroLoginTarde.css"; 
+
+            } else if (hour >= 18 && hour < 24) {
+
+                cssFile = "cadastroLogiNoite.css"; 
+
+            } else {
+                
+                cssFile = "cadastroLoginMadrugada.css"; 
+
+            }
+
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = `../Css/login/cadastro/${cssFile}`; 
+            document.head.appendChild(link);
+            
+        });
+
+    </script>
+
+</body>

@@ -1,0 +1,123 @@
+<!-- 
+    
+    Criador: Thiago, Juliana, Gustavo, Eric, Junior
+    Data inicial: 02/09/2024
+    Data final: indefindo  
+    
+-->
+
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<!-- -----------------------------------------------META-DADOS//LINKS-------------------------------------------------------------- -->
+
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeja fácil</title>
+    <link rel="stylesheet" type="text/css" href=""> 
+
+    <link rel="icon" href="../Imagens/Menu lateral Botões/Logo Planeja facil branco.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../Css/Global/reset.css"> 
+    <link rel="stylesheet" type="text/css" href="../Css/Global/variables.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Global/paginaInteira.css">
+
+
+</head>
+
+<!-- ----------------------------------------------CONTEUDO----------------------------------------------------------------- -->
+
+<body class="loginPaginaInteira">
+
+    <section class="loginPaginaInteira__card">
+
+        <section class="loginPaginaInteira__card__topo">
+
+            <div class="loginPaginaInteira__card__topo__inicio">
+
+                <div class="logocontiner">
+        
+                    <img class="loginPaginaInteira__card__topo__inicio__img" src="../Imagens/Menu lateral Botões/logo planeja facil preto2.png" alt="Logo do Planeja Fácil">
+
+                </div>
+
+                <a class="loginPaginaInteira__card__topo__inicio__volta" href="/index.html">
+
+                    Volta tela inicial
+
+                </a>
+
+            </div>
+
+            <p class="loginPaginaInteira__card__topo__texto">
+
+                Você lembrou da sua senha ?
+
+            </p>
+
+            <a class="loginPaginaInteira__card__topo__cadastro"  href="/html/cadastro.html">
+
+                Fazer login
+
+            </a>
+
+            <h1 class="loginPaginaInteira__card__topo__titulo">
+
+                Recuperar senha
+
+            </h1>
+
+        </section>
+
+        <form class="formularioRecuperar" action="/caminho-para-processamento-recuperacao" method="POST">
+
+            <p class="textoInstrucao">Digite seu e-mail cadastrado para receber instruções de redefinição de senha.</p>
+    
+            <div class="input-container">
+
+                <input type="email" class="container-escreverTexto" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+            </div>
+    
+            <button class="botaoCancelar" type="submit">Cancelar</button>
+            <button class="botaoEnviar" type="submit">Enviar Instruções</button>
+    
+        </form>
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", function() {
+    
+                const hour = new Date().getHours();
+                let cssFile;
+        
+                if (hour >= 6 && hour < 12) {
+    
+                    cssFile = "recuperarSenhaManha.css"; 
+    
+                } else if (hour >= 12 && hour < 18) {
+    
+                    cssFile = "recuperarSenhaTarde.css"; 
+    
+                } else if (hour >= 18 && hour < 24) {
+    
+                    cssFile = "recuperarSenhaNoite.css"; 
+    
+                } else {
+                    
+                    cssFile = "recuperarSenhaMadrugada.css"; 
+    
+                }
+        
+                const link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href = `../Css/login/senha/${cssFile}`; 
+                document.head.appendChild(link);
+                
+            });
+    
+        </script>
+
+</body>
