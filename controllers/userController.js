@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
 
 // Registrar novo usuário
 const registerUser = async (req, res) => {
@@ -28,9 +29,20 @@ const loginUser = async (req, res) => {
 
     const isMatch = await user.matchPassword(password);
     if (!isMatch) return res.status(400).json({ message: 'Senha incorreta' });
-
-    // TODO: Implementar geração de token JWT (se necessário)
-    res.status(200).json({ message: 'Login realizado com sucesso', user });
+    
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRES || '1h',
+    });
+    
+    res.status(200).json({
+      message: 'Login realizado com sucesso',
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+      },
+    });
   } catch (error) {
     res.status(400).json({ message: 'Erro ao realizar login' });
   }

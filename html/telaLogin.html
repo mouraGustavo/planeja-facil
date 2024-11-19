@@ -25,6 +25,16 @@
     <link rel="stylesheet" type="text/css" href="../Css/Global/paginaInteira.css">
 
 </head>
+<header class="navbar">
+    <div class="logo">
+        <img src="../Imagens/Menu lateral Botões/Logo Planeja facil branco.png" alt="Logo">
+    </div>
+    <div class="user-info">
+        <span id="user-name"></span>
+        <button id="logout-btn">Sair</button>
+    </div>
+</header>
+
 
 <!-- ----------------------------------------------CONTEUDO----------------------------------------------------------------- -->
 
@@ -142,6 +152,7 @@
             event.preventDefault();
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
+
             try {
                 const response = await fetch(this.action, {
                     method: 'POST',
@@ -150,21 +161,19 @@
                     },
                     body: JSON.stringify(data),
                 });
+
                 const result = await response.json();
                 if (response.ok) {
+                    localStorage.setItem('token', result.token);
+                    localStorage.setItem('user', JSON.stringify(result.user));
+
                     alert('Login realizado com sucesso!');
                     window.location.href = './index.html';
                 } else {
-                    alert("Erro ao realizar login: "+result.message);
-                    /* $.jnotify({
-                        text: result.message,
-                        sticky: false,
-                        time: 3000
-                    }); */
+                    alert("Erro ao realizar login: " + result.message);
                 }
-
             } catch (error) {
-                alert('Erro ao realizar login: '+ error);
+                alert('Erro ao realizar login: ' + error);
             }
         });
 

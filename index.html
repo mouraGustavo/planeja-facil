@@ -1177,3 +1177,21 @@
 <script src="./JavaScript/filtro..js"></script>
 <script src="./JavaScript/tarefas.js"></script>
 <script src="./JavaScript/menuHambuguer.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if (!user) {
+            window.location.href = './telaLogin.html';
+        } else {
+            document.getElementById('user-name').textContent = `Olá, ${user.name}`;
+        }
+
+        // Logout
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = './telaLogin.html';
+        });
+    });
+</script>
