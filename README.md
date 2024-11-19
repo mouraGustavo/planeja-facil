@@ -28,12 +28,17 @@
 planeja-facil/
 │
 ├── controllers/      # Funções que manipulam a lógica de CRUD (projetos, tarefas, etc.)
+├── Css/              # Estilizações
+├── html/             # Interfaces
+├── Imagens/          # Imagens
+├── JavaScript/       # Scripts
 ├── models/           # Modelos de dados do MongoDB (Usuários, Projetos, Tarefas, Equipes)
 ├── routes/           # Rotas de API para gerenciamento de projetos, tarefas, usuários e equipes
 ├── config/           # Configurações do banco de dados e variáveis de ambiente
 ├── middlewares/      # Middlewares de autenticação e permissões
 ├── .env              # Arquivo de configuração com variáveis de ambiente
 ├── app.js            # Arquivo principal da aplicação
+├── index.html        # Home Page
 └── package.json      # Dependências e scripts do Node.js
 ```
 

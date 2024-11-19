@@ -26,7 +26,7 @@
 
     <link rel="stylesheet" type="text/css" href="../Css/login/cadastro/cadastroLoginNoite.css">
 
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
@@ -74,7 +74,7 @@
 
         </section>
 
-        <form class="formulario" action="/caminho-para-processamento" method="POST" enctype="multipart/form-data">
+        <form class="formulario" id="registrationForm" action="../api/users/register" method="POST" enctype="application/x-www-form-urlencoded">
 
             <p class="input__titulo">
 
@@ -84,7 +84,7 @@
            
             <div class="input-container">
 
-                <input type="text" class="container-escreverTexto" id="nome" name="nome" placeholder="Exemplo: América do Sul da silva cunha" required>
+                <input type="text" class="container-escreverTexto" id="name" name="name" placeholder="Exemplo: América do Sul da silva cunha" required>
 
             </div>
     
@@ -108,7 +108,18 @@
     
             <div class="input-container">
 
-                <input type="password" class="container-escreverTexto" id="senha" name="senha" placeholder="NãoTenhoSaudadesDaEx10@" required>
+                <input type="password" class="container-escreverTexto" id="password" name="password" placeholder="NãoTenhoSaudadesDaEx10@" required>
+
+            </div>
+            <p class="input__titulo">
+
+                Função
+
+            </p>
+    
+            <div class="input-container">
+
+                <input type="text" class="container-escreverTexto" id="role" name="role" placeholder="gestor, membro, freelancer" required>
 
             </div>
 
@@ -198,6 +209,34 @@
             
         });
 
-    </script>
+        document.getElementById('registrationForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Cadastro realizado com sucesso!');
+                    window.location.href = './index.html';
+                } else {
+                    alert("Erro ao registrar usuário: "+result.message);
+                    /* $.jnotify({
+                        text: result.message,
+                        sticky: false,
+                        time: 3000
+                    }); */
+                }
 
+            } catch (error) {
+                alert('Erro ao registrar usuário: '+ error);
+            }
+        });
+    </script>
 </body>

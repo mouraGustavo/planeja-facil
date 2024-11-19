@@ -3,7 +3,7 @@ const User = require('../models/User');
 // Registrar novo usuário
 const registerUser = async (req, res) => {
   const { name, email, password, role } = req.body;
-
+  console.log('Dados recebidos no formulário: ', req.body);
   try {
     let user = await User.findOne({ email });
     if (user) {
@@ -14,7 +14,7 @@ const registerUser = async (req, res) => {
     await user.save();
     res.status(201).json({ message: 'Usuário registrado com sucesso', user });
   } catch (error) {
-    res.status(400).json({ message: 'Erro ao registrar usuário' });
+    res.status(400).json({ message: 'Erro ao registrar usuário', error });
   }
 };
 
@@ -48,10 +48,26 @@ const getCurrentUser = async (req, res) => {
   }
 };
 
+const findByEmail = async (req, res) => {
+  const { email } = req.body;
+  
+  try {
+    const user = await User.findOne({ email });
+    
+    if (!user) {
+      return res.status(404).json({ message: 'Usuário não encontrado' });
+    }
+    return res.status(200).json(user);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Erro ao buscar usuário', error });
+  }
+};
+
 // Atualizar informações do usuário
 const updateUser = async (req, res) => {
-  const { name, email, password } = req.body;
-
+  const { name, email, password, role } = req.body;
+  console.log('Dados recebidos no formulário: ', req.body);
   try {
     const user = await User.findById(req.user._id);
 
@@ -61,6 +77,9 @@ const updateUser = async (req, res) => {
     user.email = email || user.email;
     if (password) {
       user.password = password; // A criptografia é tratada pelo hook `pre('save')`
+    }
+    if (role) {
+      user.role = role;
     }
 
     await user.save();
@@ -74,5 +93,6 @@ module.exports = {
   registerUser,
   loginUser,
   getCurrentUser,
+  findByEmail,
   updateUser
 };
