@@ -41,7 +41,13 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('logout-btn').addEventListener('click', () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        window.location.href = './telaLogin.html';
-    });    
+        window.location.href = './html/telaLogin.html';
+    }); 
+    const user = JSON.parse(localStorage.getItem('user'));
 
+    if (!user) {
+        window.location.href = './html/telaLogin.html';
+    } else {
+        document.getElementById('user-name').textContent = `Olá, ${user.name}`;
+    }
 });

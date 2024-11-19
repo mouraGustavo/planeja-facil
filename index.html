@@ -11,6 +11,15 @@
 
 <!-- -----------------------------------------------META-DADOS//LINKS-------------------------------------------------------------- -->
 
+<!-- <header class="navbar">
+    <div class="logo">
+        <img src="../Imagens/Menu lateral Botões/Logo Planeja facil branco.png" alt="Logo">
+    </div>
+    <div class="user-info">
+        <span id="user-name"></span>
+        <button id="logout-btn">Sair</button>
+    </div>
+</header> -->
 <head>
    
     <meta charset="UTF-8">
@@ -463,10 +472,12 @@
 
                                     <img class="continerMenuHambuguer__opçoes__intens__img iconeusuario" src="./Imagens/MenuHamburguer/Perfil.jpg" alt="Icone usuario">
 
-                                    <a class="continerMenuHambuguer__opçoes__intens__texto textoCor2" href="./html/telaLogin.html">
-
-                                        Fazer login
-
+                                    <div class="user-info">
+                                        <span id="user-name"></span>
+                                        <!-- <button id="logout-btn">Sair</button> -->
+                                    </div>
+                                    <a class="continerMenuHambuguer__opçoes__intens__texto textoCor2" id="logout-btn" href="#">
+                                        Sair
                                     </a>
 
                                 </li>
@@ -1177,21 +1188,3 @@
 <script src="./JavaScript/filtro..js"></script>
 <script src="./JavaScript/tarefas.js"></script>
 <script src="./JavaScript/menuHambuguer.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const user = JSON.parse(localStorage.getItem('user'));
-
-        if (!user) {
-            window.location.href = './telaLogin.html';
-        } else {
-            document.getElementById('user-name').textContent = `Olá, ${user.name}`;
-        }
-
-        // Logout
-        document.getElementById('logout-btn').addEventListener('click', () => {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
-            window.location.href = './telaLogin.html';
-        });
-    });
-</script>

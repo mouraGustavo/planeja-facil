@@ -25,15 +25,6 @@
     <link rel="stylesheet" type="text/css" href="../Css/Global/paginaInteira.css">
 
 </head>
-<header class="navbar">
-    <div class="logo">
-        <img src="../Imagens/Menu lateral Botões/Logo Planeja facil branco.png" alt="Logo">
-    </div>
-    <div class="user-info">
-        <span id="user-name"></span>
-        <button id="logout-btn">Sair</button>
-    </div>
-</header>
 
 
 <!-- ----------------------------------------------CONTEUDO----------------------------------------------------------------- -->
@@ -168,7 +159,7 @@
                     localStorage.setItem('user', JSON.stringify(result.user));
 
                     alert('Login realizado com sucesso!');
-                    window.location.href = './index.html';
+                    window.location.href = '/index.html';
                 } else {
                     alert("Erro ao realizar login: " + result.message);
                 }
