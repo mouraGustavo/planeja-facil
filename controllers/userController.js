@@ -88,7 +88,7 @@ const updateUser = async (req, res) => {
     user.name = name || user.name;
     user.email = email || user.email;
     if (password) {
-      user.password = password; // A criptografia é tratada pelo hook `pre('save')`
+      user.password = password;
     }
     if (role) {
       user.role = role;

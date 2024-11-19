@@ -39,9 +39,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     document.getElementById('logout-btn').addEventListener('click', () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-        window.location.href = './html/telaLogin.html';
+        if (confirm('Tem certeza que deseja sair?')) {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            window.location.href = './html/telaLogin.html';
+        }
     }); 
     const user = JSON.parse(localStorage.getItem('user'));
 
