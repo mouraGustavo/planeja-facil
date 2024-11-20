@@ -169,11 +169,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         });
 
-        linhaProjetos.forEach(link => {
+       /*  linhaProjetos.forEach(link => {
 
             link.classList.toggle("esconder");
 
-        });
+        }); */
 
         retacionar__projeto (rotacionado);
         rotacionado = !rotacionado;
@@ -306,6 +306,120 @@ document.addEventListener("DOMContentLoaded", function() {
 
     });
 
+    // Modal de adicionar novo projeto
+    document.getElementById('adicionarProjeto').addEventListener('click', () => {
+        document.getElementById('modalCriarProjeto').style.display = 'flex';
+    });
 
+    document.getElementById('fecharModal').addEventListener('click', () => {
+        document.getElementById('modalCriarProjeto').style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        const modal = document.getElementById('modalCriarProjeto');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    document.getElementById('formCriarProjeto').addEventListener('submit', async function (event) {
+        event.preventDefault();
+    
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+    
+        try {
+            const token = localStorage.getItem('token');
+            // console.log("token: ",token);
+            if (!token) {
+                alert('Você precisa estar logado para criar um projeto.');
+                return;
+            }
+    
+            const response = await fetch('../api/projects', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                },
+                body: JSON.stringify(data)
+            });
+    
+            const result = await response.json();
+            if (response.ok) {
+                alert('Projeto criado com sucesso!');
+                document.getElementById('modalCriarProjeto').style.display = 'none';
+                location.reload();
+            } else {
+                alert(`Erro ao criar projeto: ${result.message}`);
+            }
+        } catch (error) {
+            console.error('Erro ao criar projeto:', error);
+            alert('Erro ao criar projeto. Tente novamente mais tarde.');
+        }
+    });
+    
+    const projetoSelecionado = localStorage.getItem('projetoSelecionado');
+    if (projetoSelecionado) {
+        const projeto = JSON.parse(projetoSelecionado);
+        const titulo = document.querySelector('.telaPrincipal__cabecalho__continer__informacao__apresentacao__titulo');
+        titulo.textContent = projeto.name;
+    }
 });
+document.addEventListener('DOMContentLoaded', listarProjetos);
+// Lista projetos
+async function listarProjetos() {
+    try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('Você precisa estar logado para visualizar os projetos.');
+            return;
+        }
+        const response = await fetch('../api/projects', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        const projetos = await response.json();
+        if (response.ok) {
+            const container = document.querySelector('.menuProcura__lista__projetos__continerDoProjeto');
+
+            container.innerHTML = '';
+
+            projetos.forEach(projeto => {
+                const projetoDiv = document.createElement('div');
+                projetoDiv.className = 'menuProcura__lista__projetos__linha__decorativa';
+
+                const img = document.createElement('img');
+                img.className = 'menuProcura__lista__projetos__linha__decorativa__img';
+                img.src = './Imagens/menuProcura/Linha decorativa.png';
+                img.alt = '';
+
+                const link = document.createElement('a');
+                link.className = 'menuProcura__lista__projetos__projeto__link';
+                link.href = '#';
+                link.textContent = projeto.name;
+
+                link.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const titulo = document.querySelector('.telaPrincipal__cabecalho__continer__informacao__apresentacao__titulo');
+                    titulo.textContent = projeto.name;
+
+                    localStorage.setItem('projetoSelecionado', JSON.stringify(projeto));
+                });
+                projetoDiv.appendChild(img);
+                projetoDiv.appendChild(link);
+
+                container.appendChild(projetoDiv);
+            });
+        } else {
+            alert(`Erro ao carregar projetos: ${projetos.message}`);
+        }
+    } catch (error) {
+        console.error('Erro ao listar projetos:', error);
+        alert('Erro ao listar projetos. Tente novamente mais tarde.');
+    }
+}
 

@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "**Planeja Fácil** é uma solução simples e eficiente para gerenciar projetos, tarefas e equipes. Ideal para qualquer mercado que precise de uma gestão de projetos simplificada, permitindo acompanhar o progresso de tarefas e prazos em tempo real, facilitando a colaboração entre membros fixos e temporários da equipe.",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",

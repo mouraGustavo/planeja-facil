@@ -2,14 +2,14 @@ const Project = require('../models/Project');
 const Team = require('../models/Team');
 
 exports.createProject = async (req, res) => {
-  const { name, description, team, freelancers } = req.body;
+  const { name, description/* , team, freelancers */ } = req.body;
   try {
     const project = new Project({
       name,
       description,
       owner: req.user._id, // Criar projeto somente com o dono/gestor??
-      team,
-      freelancers
+      // team,
+      // freelancers
     });
     await project.save();
     res.status(201).json(project);

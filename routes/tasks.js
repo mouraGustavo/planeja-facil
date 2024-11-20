@@ -4,7 +4,7 @@ const Task = require('../models/Task');
 const Project = require('../models/Project');
 const router = express.Router();
 
-// Criar nova tarefa (gestor ou membro)
+// Criar nova tarefa
 router.post('/', protect, authorize('gestor', 'membro'), async (req, res) => {
   const { title, description, projectId, assignedTo, dueDate } = req.body;
   try {
