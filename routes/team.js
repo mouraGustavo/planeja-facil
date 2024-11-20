@@ -1,16 +1,10 @@
 const express = require('express');
 const { protect } = require('../middlewares/auth');
-const {
-    createTeam,
-    getTeams,
-    addMemberToTeam,
-    removeMemberFromTeam,
-} = require('../controllers/teamController');
-
+const { createTeams, getTeams, addMemberToTeam, removeMemberFromTeam} = require('../controllers/teamController');
 const router = express.Router();
 
 // Criar uma nova equipe
-router.post('/', protect, createTeam);
+router.post('/', protect, createTeams);
 
 // Listar equipes
 router.get('/', protect, getTeams);
