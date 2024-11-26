@@ -312,3 +312,30 @@
     
 
 }
+
+.botaoDeletar{
+    
+margin: 50px 0px 0px 20px;
+background-color: #ff0000;
+display: flex;
+justify-content: center;
+padding: 10px 15px;
+color: white;
+font-size: 20px;
+text-align: center;
+width: 400px;
+font-weight: bolder;
+cursor: pointer;
+border: 2px solid transparent; 
+transition: border-color 0.3s ease, transform 0.3s ease; 
+
+}
+
+.botaoDeletar:hover {
+
+background: transparent;
+color: #ff0000;
+border: 2px solid #ff0000;
+
+
+}
