@@ -13,12 +13,12 @@ router.post('/login', loginUser);
 router.get('/me', protect, getCurrentUser);
 
 // Obter informações de um usuário
-router.post('/getUser', findByEmail);
+router.post('/findByEmail', findByEmail);
 
 // Atualizar informações do usuário
-router.put('/me', protect, updateUser);
+router.put('/update', protect, updateUser);
 
 // Deletar usuário
-router.delete('/me', protect, deleteUser);
+router.delete('/delete', protect, deleteUser);
 
 module.exports = router;
