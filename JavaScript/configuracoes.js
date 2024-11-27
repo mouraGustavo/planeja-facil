@@ -10,14 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const botoesListas = botoesFerramentas.querySelectorAll("li");
 
-        botoesListas.forEach((botao) => {
-
-            botao.addEventListener("click", (evento) => {
-    
+        botoesListas.addEventListener("click", (evento) => {
+            document.querySelector('.menuLateral_icones_Botao img[alt="Icone menu de ferramentas"]').addEventListener('click', () => {
                 window.location.href = './configuracoes.html';
-    
             });
-    
         });
     
         // Função para carregar dados do usuário (exemplo com localStorage)
