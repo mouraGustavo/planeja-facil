@@ -6,15 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const inputSenha = document.querySelector('#password');
         const inputCargo = document.querySelector('#cargo');
         const botaoDeletar = document.querySelector('#deleteUser');
-        const botoesFerramentas = document.getElementById("listaDeIcones");
 
-        const botoesListas = botoesFerramentas.querySelectorAll("li");
-
-        botoesListas.addEventListener("click", (evento) => {
-            document.querySelector('.menuLateral_icones_Botao img[alt="Icone menu de ferramentas"]').addEventListener('click', () => {
-                window.location.href = './configuracoes.html';
-            });
+        document.querySelector('.menuLateral_icones_Botao img[alt="Icone menu de ferramentas"]').addEventListener('click', () => {
+            window.location.href = './configuracoes.html';
         });
+
     
         // Função para carregar dados do usuário (exemplo com localStorage)
         function carregarDadosUsuario() {
