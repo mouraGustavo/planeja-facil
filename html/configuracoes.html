@@ -1,0 +1,143 @@
+<!-- 
+    
+    Criador: Thiago, Juliana, Gustavo, Eric, Junior
+    Data inicial: 02/09/2024
+    Data final: indefindo  
+    
+-->
+
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<!-- -----------------------------------------------META-DADOS//LINKS-------------------------------------------------------------- -->
+
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planeja fácil</title>
+    <link rel="stylesheet" type="text/css" href=""> 
+
+    <link rel="icon" href="../Imagens/Menu lateral Botões/Logo Planeja facil branco.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="../Css/Global/reset.css"> 
+    <link rel="stylesheet" type="text/css" href="../Css/Global/variables.css">
+    <link rel="stylesheet" type="text/css" href="../Css/Global/paginaInteira.css">
+
+    <link rel="stylesheet" type="text/css" href="../Css/configuracoes/configuracoes.css">
+
+</head>
+
+<!-- ----------------------------------------------CONTEUDO----------------------------------------------------------------- -->
+
+<body class="configuracoesPaginaInteira">
+
+    <section class="loginPaginaInteira__card">
+
+        <section class="loginPaginaInteira__card__topo">
+
+            <div class="loginPaginaInteira__card__topo__inicio">
+
+                <div class="logocontiner">
+        
+                    <img class="loginPaginaInteira__card__topo__inicio__img" src="../Imagens/Menu lateral Botões/logo planeja facil preto2.png" alt="Logo do Planeja Fácil">
+
+                </div>
+
+                <a class="loginPaginaInteira__card__topo__inicio__volta" href="/index.html">
+
+                    Volta tela inicial
+
+                </a>
+
+            </div>
+
+            <h1 class="loginPaginaInteira__card__topo__titulo">
+
+                Configurar perfil 
+
+            </h1>
+
+            <div class="continer__espaço">
+
+                <div class="imagemUsuarioContiner">
+            
+                    <img class="imagemUsuarioContiner__img" src="../Imagens/configuracoes/Usuario exemplo.svg" alt="usuario">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class= "loginPaginaInteira__card__embaixo">
+
+            <form class="formualario" id="formAlterarlogin" action="" method="">
+
+                <h3 class="input-container__titulo">
+
+                    Alterar usuario 
+
+                </h3>
+
+                <div class="input-container">
+
+                    <img src="../Imagens/login/TelaDelogin/iconeUsuario.png" alt="Ícone de usuário" class="input-icon">
+                    <input type="text" class="container-escreverTexto" id="name" name="name" placeholder="Seu nome misterioso aqui">
+
+                </div>
+
+                <h3 class="input-container__titulo">
+
+                    Alterar Senha
+
+                </h3>
+
+            
+                <div class="input-container">
+
+                    <img src="../Imagens/login/TelaDelogin/IconeSenha.png" alt="Ícone de senha" class="input-icon">
+                    <input type="password" class="container-escreverTexto" id="password" name="password" placeholder="Sua senha misteriosa aqui">
+
+                </div>
+
+                <h3 class="input-container__titulo">
+
+                    Alterar cargo
+
+                </h3>
+
+                <div class="input-container">
+
+                    <img src="../Imagens/login/TelaDelogin/IconeSenha.png" alt="Ícone de seleção" class="input-icon">
+
+                    <select class="container-selecionarTexto" id="cargo" name="cargo">
+
+                        <option value="" disabled selected>Selecione seu cargo</option>
+                        <option value="gestor">Gestor</option>
+                        <option value="membro">Membro</option>
+                        <option value="freelancer">Freelancer</option>
+
+                    </select>
+                    
+                </div>
+            
+                <button class="botaoEnviar" type="submit">
+                    
+                    Alterar dados do perfil
+                
+                </button>
+
+                <button class="botaoDeletar" type="button" onclick="deleteUser(event)">
+                    
+                    Deletar Perfil
+                
+                </button>
+
+            </form>
+
+        </section>
+
+    </section>
+
+</body>

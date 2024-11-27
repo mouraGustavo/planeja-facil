@@ -101,10 +101,30 @@ const updateUser = async (req, res) => {
   }
 };
 
+// Deletar usuário
+const deleteUser = async (req, res) => {
+  try {
+    // Buscando o usuário pelo ID fornecido no token JWT (req.user._id)
+    const user = await User.findById(req.user._id);
+
+    if (!user) {
+      return res.status(404).json({ message: 'Usuário não encontrado' });
+    }
+
+    // Deletando o usuário
+    await User.findByIdAndDelete(req.user._id);
+
+    res.status(200).json({ message: 'Usuário deletado com sucesso' });
+  } catch (error) {
+    res.status(500).json({ message: 'Erro ao deletar usuário', error: error.message });
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
   getCurrentUser,
   findByEmail,
-  updateUser
+  updateUser,
+  deleteUser
 };

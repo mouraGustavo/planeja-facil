@@ -27,8 +27,50 @@
 ```bash
 planeja-facil/
 │
-├── controllers/      # Funções que manipulam a lógica de CRUD (projetos, tarefas, etc.)
+├── config/           # Conexão ao BD
+│   ├── db.js         # Configuração para conexão ao BD
+│
+├── controllers/      # Funções que manipulam a lógica de CRUD (projetos, tarefas, usuários, membros)
+│   ├── projectController.js
+│   ├── taskCOntroller.js
+│   ├── teamController.js
+│   ├── userController.js
+│
 ├── Css/              # Estilizações
+│   ├── Conteúdo/
+│       ├── menuFerrrmantas.css
+│       ├── menuProcura.css
+│
+│   ├── Global/
+│       ├── paginaInteira.css
+│       ├── reset.css
+│       ├── variables.css
+│
+│   ├── login/
+│       ├── cadastro/
+│           ├── cadastroLoginMadrugada.css
+│           ├── cadastroLoginManha.css
+│           ├── cadastroLoginNoite.css
+│           ├── cadastroLoginTarde.css
+│
+│       ├── senha/
+│           ├── recuperaSenhaMadrugada.css
+│           ├── recuperaSenhaManha.css
+│           ├── recuperaSenhaNoite.css
+│           ├── recuperaSenhaTarde.css
+│
+│       ├── telaDeLoginMadrugada.css
+│       ├── telaDeLoginManha.css
+│       ├── telaDeLoginNoite.css
+│       ├── telaDeLoginTarde.css
+│
+│   ├── telaPrincipal/
+│       ├── cabecalho.css
+│       ├── Filtros.css
+│       ├── menuHamburguer.css
+│       ├── tarefas.css
+│       ├── telaPrincipal.css
+│
 ├── html/             # Interfaces
 ├── Imagens/          # Imagens
 ├── JavaScript/       # Scripts
