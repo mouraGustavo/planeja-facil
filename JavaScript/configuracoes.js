@@ -1,15 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    const botoesFerramenta = document.getElementById("listaDeIcones");
+    const botoesListas = botoesFerramenta.querySelectorAll("li");
+
+    botoesListas.forEach((botao) => {
+
+        const imagemBotao = botao.querySelector('img[alt="Icone menu de ferramentas"')
+
+        if(imagemBotao){
+            botao.addEventListener("click", () => {
+                window.location.href = './configuracoes.html';
+            });
+        } else {
+            botao.addEventListener("click"), () => {
+                alert("Esse botão é de decoração e não tem uma funcionalidade");
+            }
+        }
+
+    });
+
+
         // Elementos do formulário
         const form = document.querySelector('#formAlterarlogin');
         const inputNome = document.querySelector('#name');
         const inputSenha = document.querySelector('#password');
         const inputCargo = document.querySelector('#cargo');
         const botaoDeletar = document.querySelector('#deleteUser');
-
-        document.querySelector('.menuLateral_icones_Botao img[alt="Icone menu de ferramentas"]').addEventListener('click', () => {
-            window.location.href = './configuracoes.html';
-        });
 
     
         // Função para carregar dados do usuário (exemplo com localStorage)
