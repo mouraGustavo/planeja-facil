@@ -5,7 +5,20 @@ document.addEventListener("DOMContentLoaded", function() {
         const inputNome = document.querySelector('#name');
         const inputSenha = document.querySelector('#password');
         const inputCargo = document.querySelector('#cargo');
-        const botaoDeletar = document.querySelector('#deletarPerfil');
+        const botaoDeletar = document.querySelector('#deleteUser');
+        const botoesFerramentas = document.getElementById("listaDeIcones");
+
+        const botoesListas = botoesFerramentas.querySelectorAll("li");
+
+        botoesListas.forEach((botao) => {
+
+            botao.addEventListener("click", (evento) => {
+    
+                window.location.href = './configuracoes.html';
+    
+            });
+    
+        });
     
         // Função para carregar dados do usuário (exemplo com localStorage)
         function carregarDadosUsuario() {
