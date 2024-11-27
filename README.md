@@ -27,8 +27,50 @@
 ```bash
 planeja-facil/
 │
-├── controllers/      # Funções que manipulam a lógica de CRUD (projetos, tarefas, etc.)
+├── config/           # Conexão ao BD
+│   ├── db.js         # Configuração para conexão ao BD
+│
+├── controllers/      # Funções que manipulam a lógica de CRUD (projetos, tarefas, usuários, membros)
+│   ├── projectController.js
+│   ├── taskCOntroller.js
+│   ├── teamController.js
+│   ├── userController.js
+│
 ├── Css/              # Estilizações
+│   ├── Conteúdo/
+│       ├── menuFerrrmantas.css
+│       ├── menuProcura.css
+│
+│   ├── Global/
+│       ├── paginaInteira.css
+│       ├── reset.css
+│       ├── variables.css
+│
+│   ├── login/
+│       ├── cadastro/
+│           ├── cadastroLoginMadrugada.css
+│           ├── cadastroLoginManha.css
+│           ├── cadastroLoginNoite.css
+│           ├── cadastroLoginTarde.css
+│
+│       ├── senha/
+│           ├── recuperaSenhaMadrugada.css
+│           ├── recuperaSenhaManha.css
+│           ├── recuperaSenhaNoite.css
+│           ├── recuperaSenhaTarde.css
+│
+│       ├── telaDeLoginMadrugada.css
+│       ├── telaDeLoginManha.css
+│       ├── telaDeLoginNoite.css
+│       ├── telaDeLoginTarde.css
+│
+│   ├── telaPrincipal/
+│       ├── cabecalho.css
+│       ├── Filtros.css
+│       ├── menuHamburguer.css
+│       ├── tarefas.css
+│       ├── telaPrincipal.css
+│
 ├── html/             # Interfaces
 ├── Imagens/          # Imagens
 ├── JavaScript/       # Scripts
@@ -47,7 +89,7 @@ planeja-facil/
 - **MongoDB** (Local ou em nuvem)
 
 ## Instalação ⚙️
-- **Siga os passos abaixo para rodar o projeto localmente:**
+### **Siga os passos abaixo para rodar o projeto localmente:**
 
 1. **Clone este repositório:**
 
@@ -79,26 +121,26 @@ npm run dev
 http://localhost:5000
 ````
 ## Rotas da API 🛣️
-- **Projetos**
+### **Projetos**
 
 - **POST /api/projects:** Cria um novo projeto.
 - **GET /api/projects:** Lista todos os projetos do usuário.
 - **POST /api/projects/:id/team:** Adiciona uma equipe ao projeto.
 - **POST /api/projects/:id/member:** Adiciona um membro ao projeto.
 
-- **Tarefas**
+### **Tarefas**
 
 - **POST /api/tasks:** Cria uma nova tarefa.
 - **GET /api/tasks:** Lista todas as tarefas do usuário.
 - **PUT /api/tasks/:id/status:** Atualiza o status de uma tarefa.
 
-- **Equipes**
+### **Equipes**
 
 - **POST /api/teams:** Cria uma nova equipe.
 - **GET /api/teams:** Lista todas as equipes.
 - **POST /api/teams/:id/member:** Adiciona um membro à equipe.
 
-- **Autenticação**
+### **Autenticação**
 
 - **POST /api/auth/register:** Registra um novo usuário.
 - **POST /api/auth/login:** Faz login e retorna um token JWT.
@@ -109,5 +151,4 @@ http://localhost:5000
 * **Consultores/Partes interessadas:** Acesso restrito a tarefas específicas dentro dos projetos.
 
 ## Melhorias Futuras 🚀
-* Frontend.
 * Implementação de notificações para prazos de tarefas.
