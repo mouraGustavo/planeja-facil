@@ -229,7 +229,7 @@
                 </div>
                 <section class="menuProcura__lista__projetos__continer" id="listaTodosProjetos">
 
-                    <button class="menuProcura__lista__projetos__botao__expandir__dois temporario" id = "botaoExpandir__TodosProjetos" >
+                    <button class="menuProcura__lista__projetos__botao__expandir__dois temporario" id = "botaoExpandir__TodosProjetos" onclick="limparProjetos()">
 
                         <img class="menuProcura__lista__projetos__botao__expandir__img"  id = "iconeSeta__TodosProjetos" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
                         <img class="menuProcura__lista__projetos__botao__expandir__img"  id = "iconeSeta__TodosProjetos2" src="./Imagens/menuProcura/icone seta branca.png" alt="Icone seta">
@@ -629,7 +629,7 @@
                     
                         <h3 class="telaPrincipal__tarefas__categoria__titulo">
 
-                            🔴 <strong class="telaPrincipal__tarefas__categoria__titulo__texto temporario"> Nova tarefa - 3 </strong>
+                            🔴 <strong class="telaPrincipal__tarefas__categoria__titulo__texto temporario"> A Fazer </strong>
 
                         </h3>
 
@@ -637,15 +637,15 @@
 
                     </div>
 
-                    <button id="addTask1" class="telaPrincipal__tarefas__categoria__botaoAdicionar">
+                    <button id="addTask1" class="telaPrincipal__tarefas__categoria__botaoAdicionar" style="cursor: pointer;">
 
                         +
 
                     </button>
 
                 </div>
-
-                <ul class="telaPrincipal__tarefas__categoria__cards">
+                <ul class="telaPrincipal__tarefas__categoria__cards tarefas-to-do"></ul>
+               <!--  <ul class="telaPrincipal__tarefas__categoria__cards">
 
                     <li class="telaPrincipal__tarefas__categoria__cards__continer">
 
@@ -717,9 +717,9 @@
 
                     </li>
 
-                </ul>
+                </ul> -->
 
-                <ul class="telaPrincipal__tarefas__categoria__cards">
+                <!-- <ul class="telaPrincipal__tarefas__categoria__cards">
 
                     <li class="telaPrincipal__tarefas__categoria__cards__continer">
 
@@ -799,9 +799,9 @@
 
                     </li>
 
-                </ul>
+                </ul> -->
 
-                <ul class="telaPrincipal__tarefas__categoria__cards">
+                <!-- <ul class="telaPrincipal__tarefas__categoria__cards">
 
                     <li class="telaPrincipal__tarefas__categoria__cards__continer">
 
@@ -873,7 +873,7 @@
 
                     </li>
 
-                </ul>
+                </ul> -->
 
             </section>
 
@@ -895,11 +895,11 @@
 
                     </div>
 
-                    <button id="addTask2" class="telaPrincipal__tarefas__categoria__botaoAdicionar">+</button>
+                    <button id="addTask2" class="telaPrincipal__tarefas__categoria__botaoAdicionar" style="cursor: pointer;">+</button>
 
                 </div>
 
-                <ul class="telaPrincipal__tarefas__categoria__cards">
+                <!-- <ul class="telaPrincipal__tarefas__categoria__cards">
 
                     <li class="telaPrincipal__tarefas__categoria__cards__continer">
 
@@ -963,9 +963,8 @@
 
                     </li>
 
-                </ul>
-
-               
+                </ul> -->
+                <ul class="telaPrincipal__tarefas__categoria__cards tarefas-in-progress"></ul>              
 
            </section>
 
@@ -987,15 +986,15 @@
 
                 </div>
 
-                <button id="addTask3" class="telaPrincipal__tarefas__categoria__botaoAdicionar">
+                <button id="addTask3" class="telaPrincipal__tarefas__categoria__botaoAdicionar" style="cursor: pointer;">
 
                     +
 
                 </button>
 
             </div>
-
-            <ul class="telaPrincipal__tarefas__categoria__cards">
+            <ul class="telaPrincipal__tarefas__categoria__cards tarefas-done"></ul>
+            <!-- <ul class="telaPrincipal__tarefas__categoria__cards">
 
                 <li class="telaPrincipal__tarefas__categoria__cards__continer">
 
@@ -1135,7 +1134,7 @@
 
                 </li>
 
-            </ul>
+            </ul> -->
         
     </section>
 <!-- ----------------------------------------------SCRIPTS------------------------------------------------------------------- -->
@@ -1151,8 +1150,9 @@
 </body>
 <!-- Modal criar projeto -->
 <div id="modalCriarProjeto" class="modal" style="display: none;" title="Criar Novo Projeto">
-    <div class="modal-content">
-        <span class="close" id="fecharModal">&times;</span>
+    <div class="modal-conteudo">
+        <span class="fechar" id="fecharModal">&times;</span>
+        <h2>Criar Novo Projeto</h2>
         <form id="formCriarProjeto">
             <label for="nomeProjeto">Nome do Projeto</label>
             <input type="text" id="nomeProjeto" name="name" required>
@@ -1167,7 +1167,7 @@
 <!-- Modal criar tarefa -->
 <div id="modalCriarTarefa" class="modal" style="display: none;">
     <div class="modal-conteudo">
-        <span class="fechar" id="fecharModal">&times;</span>
+        <span class="fechar" id="fecharModalTask">&times;</span>
         <h2>Criar Nova Tarefa</h2>
         <form id="formCriarTarefa">
             <label for="titulo">Título:</label>
@@ -1180,7 +1180,13 @@
             <select id="projetoId" name="projetoId" required>
                 <option value="">-- Selecione um Projeto --</option>
             </select>
-
+            
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="to-do">To Do</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+            </select>
             <!-- <label for="responsavelId">Responsável:</label>
             <select id="responsavelId" name="responsavelId" required>
             </select> -->
@@ -1189,6 +1195,34 @@
             <input type="date" id="dataVencimento" name="dataVencimento">
 
             <button type="submit">Criar Tarefa</button>
+        </form>
+    </div>
+</div>
+
+<div id="modalEditarTarefa" class="modal" style="display: none;">
+    <div class="modal-conteudo">
+        <span id="fecharTaskEdit" class="fechar">&times;</span>
+        <h2>Editar Tarefa</h2>
+        <form id="formEditarTarefa">
+            <input type="hidden" id="editarTarefaId" />
+
+            <label for="tituloEditar">Título:</label>
+            <input type="text" id="tituloEditar" name="tituloEditar" required>
+
+            <label for="descricaoEditar">Descrição:</label>
+            <textarea id="descricaoEditar" name="descricaoEditar"></textarea>
+            
+            <label for="statusEditar">Status:</label>
+            <select id="statusEditar" name="statusEditar" required>
+                <option value="to-do">To Do</option>
+                <option value="in-progress">In Progress</option>
+                <option value="done">Done</option>
+            </select>
+
+            <label for="dataVencimentoEditar">Data de Vencimento:</label>
+            <input type="date" id="dataVencimentoEditar" name="dataVencimentoEditar">
+
+            <button type="submit">Salvar Alterações</button>
         </form>
     </div>
 </div>

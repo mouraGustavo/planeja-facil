@@ -61,12 +61,13 @@
 
 }
 
-.telaPrincipal__tarefas__categoria__cards {
-
-    margin: 0px 0px 8px 0px;
-
+.telaPrincipal__tarefas__categoria {
+    margin-bottom: 20px; /* Adiciona um espaço entre as seções */
 }
 
+.telaPrincipal__tarefas__categoria__cards {
+    margin-top: 10px; /* Adiciona um espaço acima da lista */
+}
 .telaPrincipal__tarefas__categoria__cards__continer {
 
     background: var(--corDeFundoTerciaria);
@@ -245,37 +246,117 @@
 }
 
 /* Modal */
+/* Estilização da modal */
 .modal {
     display: none; /* Oculta a modal por padrão */
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro com transparência */
 }
 
+/* Conteúdo da modal */
 .modal-conteudo {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+    background-color: #fff;
+    margin: 10% auto; /* Centraliza verticalmente e horizontalmente */
+    padding: 30px 40px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    animation: slide-down 0.3s ease-out;
 }
 
+/* Animação de entrada */
+@keyframes slide-down {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Título */
+.modal-conteudo h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+}
+
+/* Botão de fechar */
 .fechar {
-    color: #aaa;
+    color: #999;
     float: right;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
 }
 
 .fechar:hover,
 .fechar:focus {
-    color: black;
-    text-decoration: none;
+    color: #555;
+}
+
+/* Formulário */
+.modal-conteudo form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.modal-conteudo form input,
+.modal-conteudo form textarea,
+.modal-conteudo form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.modal-conteudo form textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    min-height: 80px;
+}
+
+/* Botão de envio */
+.modal-conteudo form button[type="submit"] {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-conteudo form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .modal-conteudo {
+        width: 90%; /* Ajusta a largura para telas menores */
+        padding: 20px;
+    }
+
+    .modal-conteudo h2 {
+        font-size: 1.5rem;
+    }
 }

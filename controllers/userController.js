@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 // Registrar novo usuário
 const registerUser = async (req, res) => {
   const { name, email, password, role } = req.body;
-  console.log('Dados recebidos no formulário: ', req.body);
+  // console.log('Dados recebidos no formulário: ', req.body);
   try {
     let user = await User.findOne({ email });
     if (user) {
@@ -13,7 +13,10 @@ const registerUser = async (req, res) => {
 
     user = new User({ name, email, password, role });
     await user.save();
-    res.status(201).json({ message: 'Usuário registrado com sucesso', user });
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: process.env.JWT_EXPIRES || '1h',
+    });
+    res.status(201).json({ message: 'Usuário registrado com sucesso', user, token });
   } catch (error) {
     res.status(400).json({ message: 'Erro ao registrar usuário', error });
   }
@@ -79,7 +82,7 @@ const findByEmail = async (req, res) => {
 // Atualizar informações do usuário
 const updateUser = async (req, res) => {
   const { name, email, password, role } = req.body;
-  console.log('Dados recebidos no formulário: ', req.body);
+
   try {
     const user = await User.findById(req.user._id);
 
@@ -97,21 +100,20 @@ const updateUser = async (req, res) => {
     await user.save();
     res.status(200).json({ message: 'Usuário atualizado com sucesso', user });
   } catch (error) {
-    res.status(400).json({ message: 'Erro ao atualizar usuário' });
+    res.status(400).json({ message: 'Erro ao atualizar usuário', error });
   }
 };
 
 // Deletar usuário
 const deleteUser = async (req, res) => {
   try {
-    // Buscando o usuário pelo ID fornecido no token JWT (req.user._id)
+    
     const user = await User.findById(req.user._id);
 
     if (!user) {
       return res.status(404).json({ message: 'Usuário não encontrado' });
     }
 
-    // Deletando o usuário
     await User.findByIdAndDelete(req.user._id);
 
     res.status(200).json({ message: 'Usuário deletado com sucesso' });

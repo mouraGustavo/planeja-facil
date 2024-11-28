@@ -72,8 +72,20 @@
 
         <section class= "loginPaginaInteira__card__embaixo">
 
-            <form class="formualario" id="formAlterarlogin" action="" method="">
+            <form class="formualario" id="formAlterarlogin"  action="/api/users/update" method="POST">
 
+                <h3 class="input-container__titulo">
+
+                    Alterar Nome
+
+                </h3>
+
+                <div class="input-container">
+
+                    <img src="../Imagens/login/TelaDelogin/iconeUsuario.png" alt="Ícone de usuário" class="input-icon">
+                    <input type="text" class="container-escreverTexto" id="name" name="name" placeholder="Seu nome misterioso aqui">
+
+                </div>
                 <h3 class="input-container__titulo">
 
                     Alterar usuario 
@@ -83,7 +95,7 @@
                 <div class="input-container">
 
                     <img src="../Imagens/login/TelaDelogin/iconeUsuario.png" alt="Ícone de usuário" class="input-icon">
-                    <input type="text" class="container-escreverTexto" id="name" name="name" placeholder="Seu nome misterioso aqui">
+                    <input type="text" class="container-escreverTexto" id="email" name="email" placeholder="mail@mail.com">
 
                 </div>
 
@@ -141,3 +153,106 @@
     </section>
 
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const token = localStorage.getItem('token');
+
+        if (!token) {
+            alert('Você precisa estar logado.');
+            window.location.href = '/html/telaLogin.html';
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/users/me', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
+            });
+
+            if (response.ok) {
+                const user = await response.json();
+
+                document.getElementById('name').value = user.name || '';
+                document.getElementById('email').value = user.email || '';
+                document.getElementById('password').value = ''; // Senha vazia
+                document.getElementById('cargo').value = user.role || '';
+            } else {
+                throw new Error('Erro ao carregar os dados do usuário.');
+            }
+        } catch (error) {
+            console.error('Erro:', error);
+            alert('Erro ao carregar os dados do usuário.');
+            window.location.href = '/html/telaLogin.html';
+        }
+    });
+     document.getElementById('formAlterarlogin').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            try {
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    alert('Você precisa estar logado para atualizar o usuário.');
+                    return;
+                }
+
+                const response = await fetch(this.action, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`,
+                    },
+                    body: JSON.stringify(data),
+                });
+                const result = await response.json();
+                if (response.ok) {
+                    alert('usuário alterado com sucesso!');
+                    window.location.reload();
+                } else {
+                    alert("Erro ao atualizar usuário: "+result.message);
+                }
+
+            } catch (error) {
+                alert('Erro ao atualizar usuário: '+ error);
+            }
+        });
+        async function deleteUser(event) {
+            event.preventDefault();
+
+            if (!confirm('Tem certeza que deseja deletar seu perfil? Esta ação é irreversível.')) {
+                return; // Se o usuário cancelar, não faz nada
+            }
+
+            try {
+                const token = localStorage.getItem('token');
+                if (!token) {
+                    alert('Você precisa estar logado para deletar seu perfil.');
+                    return;
+                }
+
+                const response = await fetch('/api/users/delete', {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                    },
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert('Perfil deletado com sucesso!');
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    window.location.href = '/html/telaLogin.html';
+                } else {
+                    alert('Erro ao deletar perfil: ' + result.message);
+                }
+            } catch (error) {
+                console.error('Erro ao deletar perfil:', error);
+                alert('Erro ao deletar perfil. Tente novamente mais tarde.');
+            }
+        }
+
+</script>

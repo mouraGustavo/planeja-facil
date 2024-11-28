@@ -408,6 +408,8 @@ async function listarProjetos() {
                     titulo.textContent = projeto.name;
 
                     localStorage.setItem('projetoSelecionado', JSON.stringify(projeto));
+                    
+                    listarTarefasPorProjeto(projeto._id)
                 });
                 projetoDiv.appendChild(img);
                 projetoDiv.appendChild(link);
@@ -423,3 +425,6 @@ async function listarProjetos() {
     }
 }
 
+function limparProjetos() {
+    localStorage.removeItem('projetoSelecionado');
+}
