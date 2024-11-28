@@ -78,16 +78,17 @@ document.addEventListener("DOMContentLoaded", function() {
         const projetoId = document.getElementById('projetoId').value;
         const responsavel = JSON.parse(localStorage.getItem('user'));
         const dataEntrega = document.getElementById('dataVencimento').value;
-        const status = document.getElementById('status').value;
+        const status = document.getElementById('status').value;        
         
         const novaTarefa = {
             title: titulo,
             description: descricao,
             projectId: projetoId,
-            assignedTo: responsavel._id,
+            assignedTo: (responsavel._id == undefined ? responsavel.id : responsavel._id),
             dueDate: dataEntrega,
             status: status
         };
+        
         try {
             const token = localStorage.getItem('token');
             
@@ -110,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert('Tarefa criada com sucesso!');
                 modalNovaTarefa.style.display = 'none';
                 formulario.reset();
+                window.location.reload();
             } else {
                 const erro = await response.json();
                 alert('Erro ao criar tarefa: ' + erro);

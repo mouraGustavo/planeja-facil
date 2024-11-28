@@ -128,7 +128,6 @@
                         body: JSON.stringify(data),
                     });
                     const result = await response.json();
-                    console.log("result: ", result);
                     delete result._id;
                     delete result.createdAt;
                     delete result.__v;
