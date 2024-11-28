@@ -18,7 +18,6 @@ exports.createProject = async (req, res) => {
   }
 };
 
-// TODO - verificar listagem somente por usuario
 exports.getProjects = async (req, res) => {
   try {
     const projects = await Project.find({ 
@@ -46,4 +45,25 @@ exports.addTeamToProject = async (req, res) => {
   } catch (error) {
     res.status(400).json({ message: 'Erro ao adicionar equipe ao projeto', error });
   }
+};
+
+exports.updateProject = async (req, res) => {
+  const { id } = req.params;
+  const updatedData = req.body;
+
+  //TODO - Lógica para encontrar o projeto pelo ID e atualizá-lo
+
+  res.status(200).json({
+      success: true,
+      data: updatedProject, // O projeto atualizado
+  });
+};
+
+// Deletar um projeto
+exports.deleteProject = async (req, res) => {
+  const { id } = req.params;
+
+  // TODO - Lógica para encontrar o projeto pelo ID e deletá-lo
+
+  res.status(204).send(); // No content response
 };
